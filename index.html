@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/5faf7bc2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/0/" class="post-title-link" itemprop="url">Untitled</a>
+            <a href="/posts/5faf7bc2/" class="post-title-link" itemprop="url">详解动态规划,就此一篇足以</a>
         </h2>
 
         <div class="post-meta">
@@ -168,8 +168,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-02-05 13:22:15" itemprop="dateCreated datePublished" datetime="2021-02-05T13:22:15+08:00">2021-02-05</time>
+              <time title="Created: 2021-02-05 13:26:57 / Modified: 13:30:12" itemprop="dateCreated datePublished" datetime="2021-02-05T13:26:57+08:00">2021-02-05</time>
             </span>
 
           
@@ -183,7 +184,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>[点击链接领取几百本书籍] <a target="_blank" rel="noopener" href="https://www.cnblogs.com/johngo/p/14245797.html">https://www.cnblogs.com/johngo/p/14245797.html</a></p>
+          <img src="/images/b046fbe0f5ceead771b5ceeeaf5f7eed1.jpg" width="50%" height="50%">
+
+<!-- more  -->
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">首先，先大致列下这篇文章会讲到什么</span><br><span class="line">    1.相较于暴力解法，动态规划带给我们的是什么？为什么会有重叠子问题以及怎么去避免的?</span><br><span class="line">    2.用不同难度的动态规划问题举例说明， 最后会使用《打家劫舍》系列三个题再重温一次.</span><br><span class="line">一、动态规划带给我们的优势</span><br><span class="line">传统递归 vs. DP</span><br><span class="line">    1. 先 递归解决</span><br><span class="line">    2. 后 动态规划解决</span><br><span class="line">    3. 动态规划 + 优化</span><br><span class="line">二、动态规划四大解题步骤处理问题</span><br><span class="line">    步骤一：定义dp数组的含义</span><br><span class="line">    步骤二：定义状态转移方程</span><br><span class="line">    步骤三：初始化过程转移的初始值</span><br><span class="line">    步骤四：可优化点(可选)</span><br><span class="line">案例一：打家劫舍I 「来自leetcode198」</span><br><span class="line">    步骤一： 定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化数值设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例二：不同路径「来自leetcode62」</span><br><span class="line">    步骤一：定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化数值设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例三：不同路径II 「来自leetcode63」</span><br><span class="line">    步骤一：定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化数值设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例四：打家劫舍II 「来自leetcode213」</span><br><span class="line">    步骤一： 定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例五：打家劫舍III 「来自leetcode337」</span><br><span class="line">    步骤一： 定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化设定</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>动态规划 - 超详细系列</p>
