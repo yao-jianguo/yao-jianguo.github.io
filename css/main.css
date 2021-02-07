@@ -242,6 +242,11 @@ video {
   margin-right: auto;
   max-width: 100%;
 }
+hr {
+  border: 0;
+  height: 0px;
+  margin: 0px 0;
+}
 blockquote {
   border-left: 4px solid #ddd;
   color: var(--blockquote-color);
@@ -1172,7 +1177,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9e7aff;
+  background: #cfffc8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
