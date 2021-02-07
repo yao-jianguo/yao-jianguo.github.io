@@ -243,9 +243,10 @@ video {
   max-width: 100%;
 }
 hr {
+  background-image: repeating-linear-gradient(-45deg, #ddd, #ddd 4px, transparent 4px, transparent 8px);
   border: 0;
-  height: 0px;
-  margin: 0px 0;
+  height: 3px;
+  margin: 40px 0;
 }
 blockquote {
   border-left: 4px solid #ddd;
@@ -1177,7 +1178,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffdeab;
+  background: #9ad0ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1683,10 +1684,10 @@ pre .javascript .function {
 }
 .post-eof {
   background: #ccc;
-  height: 1px;
+  height: 0px;
   margin: 80px auto 60px;
   text-align: center;
-  width: 8%;
+  width: 0%;
 }
 .post-block:last-of-type .post-eof {
   display: none;
