@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+<meta name="360-site-verification" content="c18957643638bc25bd0a63c24cc00c32" />
+<meta name="google-site-verification" content="DrH7ugrBSgIOHx1mYn_jgThI0EPHF7kB2pRxkfoTbec" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kekedetecclub_icon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wwww.keketec.club","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="baidu-site-verification" content="code-l9uRmrXQRg" />
+
+
+
+
+
+
+
+
+
+  <meta name="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="可可の技术俱乐部">
+<meta property="og:url" content="http://wwww.keketec.club/page/10/index.html">
+<meta property="og:site_name" content="可可の技术俱乐部">
+<meta property="og:description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Johngo">
+<meta property="article:tag" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://wwww.keketec.club/page/10/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>可可の技术俱乐部</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0c5a95f460eb137dd49e2e64ed9c0b49";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">可可の技术俱乐部</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python灰帽子黑客与逆向工程师的Python编程之道》"><a href="#《Python灰帽子黑客与逆向工程师的Python编程之道》" class="headerlink" title="《Python灰帽子黑客与逆向工程师的Python编程之道》"></a>《Python灰帽子黑客与逆向工程师的Python编程之道》</h4><h6 id="链接-https-pan-baidu-com-s-11b-tkIcexYXDe2Ge1a-kaA-提取码-ev5v"><a href="#链接-https-pan-baidu-com-s-11b-tkIcexYXDe2Ge1a-kaA-提取码-ev5v" class="headerlink" title="链接: https://pan.baidu.com/s/11b-tkIcexYXDe2Ge1a_kaA 提取码: ev5v"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/11b-tkIcexYXDe2Ge1a_kaA">https://pan.baidu.com/s/11b-tkIcexYXDe2Ge1a_kaA</a> 提取码: ev5v</h6><p>本书是由知名安全机构ImmunityInc的资深黑帽JustinSeitz先生主笔撰写的一本关于编程语言Python如何被广泛应用于黑客与逆向工程领域的书籍．老牌黑客，同时也是ImmunityInc的创始人兼首席技术执行官(CT0)DaveAitel为本书担任了技术编辑一职。本书的绝大部分篇幅着眼于黑客技术领域中的两大经久不衰的话题：逆向工程与漏洞挖掘，并向读者呈现了几乎每个逆向工程师或安全研究人员在日常工作中所面临的各种场景，其中包括：如何设计?构建自己的调试工具，如何自动化实现烦琐的逆向分析任务，如何设计与构建自己的fuzzing工具，如何利用fuzzing测试来找出存在于软件产品中的安全漏洞，一些小技巧诸如钩子与注入技术的应用，以及对一些主流Python安全工具如PyDbg、ImmunityDebugger、Sulley、IDAPython、PyEmu等的深入介绍。作者借助于如今黑客社区中备受青睐的编程语言Python读者构建出精悍的脚本程序来——应对上述这些问题。出现在本书中的相当一部分Python代码实例借鉴或直接来源于一些的开源安全项目，诸如PedramAmini的Paimei，由此读者可以领略到安全研究者?是如何将黑客艺术与工程技术优雅融合来解决那些棘手问题的。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python数据处理》"><a href="#《Python数据处理》" class="headerlink" title="《Python数据处理》"></a>《Python数据处理》</h4><h6 id="链接-https-pan-baidu-com-s-1mgZhwNG-Qzz9C3YfJjl7-g-提取码-m42q"><a href="#链接-https-pan-baidu-com-s-1mgZhwNG-Qzz9C3YfJjl7-g-提取码-m42q" class="headerlink" title="链接: https://pan.baidu.com/s/1mgZhwNG_Qzz9C3YfJjl7-g 提取码: m42q"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1mgZhwNG_Qzz9C3YfJjl7-g">https://pan.baidu.com/s/1mgZhwNG_Qzz9C3YfJjl7-g</a> 提取码: m42q</h6><p>本书采用基于项目的方法，介绍用Python完成数据获取、数据清洗、数据探索、数据呈现、数据规模化和自动化的过程。主要内容包括：Python基础知识，如何从CSV、Excel、XML、JSON和PDF文件中提取数据，如何获取与存储数据，各种数据清洗与分析技术，数据可视化方法，如何从网站和API中提取数据。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python开发技术详解》"><a href="#《Python开发技术详解》" class="headerlink" title="《Python开发技术详解》"></a>《Python开发技术详解》</h4><h6 id="链接-https-pan-baidu-com-s-1SEgxhjYLstG3aPU-LRbZMw-提取码-3kjn"><a href="#链接-https-pan-baidu-com-s-1SEgxhjYLstG3aPU-LRbZMw-提取码-3kjn" class="headerlink" title="链接: https://pan.baidu.com/s/1SEgxhjYLstG3aPU-LRbZMw 提取码: 3kjn"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1SEgxhjYLstG3aPU-LRbZMw">https://pan.baidu.com/s/1SEgxhjYLstG3aPU-LRbZMw</a> 提取码: 3kjn</h6><p>深入解析Python语言，透析应用开发的方方面面</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python数据分析与挖掘实战》"><a href="#《Python数据分析与挖掘实战》" class="headerlink" title="《Python数据分析与挖掘实战》"></a>《Python数据分析与挖掘实战》</h4><h6 id="链接-https-pan-baidu-com-s-1OjNqNn3nNVKXBkHUeZ2mVg-提取码-evbm"><a href="#链接-https-pan-baidu-com-s-1OjNqNn3nNVKXBkHUeZ2mVg-提取码-evbm" class="headerlink" title="链接: https://pan.baidu.com/s/1OjNqNn3nNVKXBkHUeZ2mVg 提取码: evbm"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1OjNqNn3nNVKXBkHUeZ2mVg">https://pan.baidu.com/s/1OjNqNn3nNVKXBkHUeZ2mVg</a> 提取码: evbm</h6><p>第一部分 基础篇（第1～5章）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>780</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python数据可视化编程实战》"><a href="#《Python数据可视化编程实战》" class="headerlink" title="《Python数据可视化编程实战》"></a>《Python数据可视化编程实战》</h4><h6 id="链接-https-pan-baidu-com-s-1b-36vxf3t-8ut5P5qHapaw-提取码-b3sb"><a href="#链接-https-pan-baidu-com-s-1b-36vxf3t-8ut5P5qHapaw-提取码-b3sb" class="headerlink" title="链接: https://pan.baidu.com/s/1b_36vxf3t-8ut5P5qHapaw 提取码: b3sb"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1b_36vxf3t-8ut5P5qHapaw">https://pan.baidu.com/s/1b_36vxf3t-8ut5P5qHapaw</a> 提取码: b3sb</h6><p>本书是一本使用Python实现数据可视化编程的实战指南，介绍了如何使用Python很流行的库，通过60余种方法创建美观的数据可视化效果。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Pro-Git中文版》"><a href="#《Pro-Git中文版》" class="headerlink" title="《Pro Git中文版》"></a>《Pro Git中文版》</h4><h6 id="链接-https-pan-baidu-com-s-1anGEASiinAIU3eo-tcnGUw-提取码-eeg1"><a href="#链接-https-pan-baidu-com-s-1anGEASiinAIU3eo-tcnGUw-提取码-eeg1" class="headerlink" title="链接: https://pan.baidu.com/s/1anGEASiinAIU3eo_tcnGUw 提取码: eeg1"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1anGEASiinAIU3eo_tcnGUw">https://pan.baidu.com/s/1anGEASiinAIU3eo_tcnGUw</a> 提取码: eeg1</h6><p>高效的版本控制是成功开发软件项目的关键。自2005年诞生以来，Git以其分布式特点和对非线性开发的强有力支持，成为了许多软件项目的版本控制系统。本书不仅是Git日常操作指南，而且深入剖析了Git的内部原理，能有效帮助程序员提升软技能。如果你刚刚启程探索Git，本书对于Git的用法、基本命令和分支机制的讲解将助你轻松入门、不走弯路。如果你在Git之路上已经走了一些时日，本书关于Git服务器、配置文件和钩子系统的内容将为你补充继续前行所需的能量。如果你不得不同时使用Git和其他版本控制系统，本书会教你如何将Git作为客户端来轻松应对此种情景。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python基础教程（第二版）》"><a href="#《Python基础教程（第二版）》" class="headerlink" title="《Python基础教程（第二版）》"></a>《Python基础教程（第二版）》</h4><h4 id="获取链接-https-pan-baidu-com-s-14XqoV2ZoF5YmYmGjHsY6nw-密码-lam6"><a href="#获取链接-https-pan-baidu-com-s-14XqoV2ZoF5YmYmGjHsY6nw-密码-lam6" class="headerlink" title="获取链接: https://pan.baidu.com/s/14XqoV2ZoF5YmYmGjHsY6nw 密码: lam6"></a>获取链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/14XqoV2ZoF5YmYmGjHsY6nw">https://pan.baidu.com/s/14XqoV2ZoF5YmYmGjHsY6nw</a> 密码: lam6</h4><p>本书包括Python程序设计的方方面面：首先从Python的安装开始，随后介绍了Python的基础知识和基本概念，包括列表、元组、字符串、字典以及各种语句；然后循序渐进地介绍了一些相对高级的主题，包括抽象、异常、魔法方法、属性、迭代器；此后探讨了如何将Python与数据库、网络、C语言等工具结合使用，从而发挥出Python的强大功能，同时介绍了Python程序测试、打包、发布等知识；最后，作者结合前面讲述的内容，按照实际项目开发的步骤向读者介绍了10个具有实际意义的Python项目的开发过程。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《Python开发实战》"><a href="#《Python开发实战》" class="headerlink" title="《Python开发实战》"></a>《Python开发实战》</h4><h6 id="链接-https-pan-baidu-com-s-16jATIJ3mFqT8T05H384hoA-提取码-2bnj"><a href="#链接-https-pan-baidu-com-s-16jATIJ3mFqT8T05H384hoA-提取码-2bnj" class="headerlink" title="链接: https://pan.baidu.com/s/16jATIJ3mFqT8T05H384hoA 提取码: 2bnj"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/16jATIJ3mFqT8T05H384hoA">https://pan.baidu.com/s/16jATIJ3mFqT8T05H384hoA</a> 提取码: 2bnj</h6><p>《Python开发实战》来自真正的开发现场，是BePROUD公司众多极客在真实项目中的经验总结。作者从Python的环境搭建讲起，介绍了Web应用开发方法、任务管理，以及评审、测试及高效部署、服务器调试等内容，尽可能网罗了Python开发流程中所涉及的方方面面。在这里，Python仅仅是一个载体，很多知识点在非Python下也适用，这也是本书大的特色所在。《Python开发实战》适合有基础的Python开发者，以及使用PHP或Ruby进行网页开发的读者阅读。…</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《NumPy学习指南（第2版）版》"><a href="#《NumPy学习指南（第2版）版》" class="headerlink" title="《NumPy学习指南（第2版）版》"></a>《NumPy学习指南（第2版）版》</h4><h6 id="链接-https-pan-baidu-com-s-1JgvWbUdRzQtyvsaNTGu1Fw-提取码-3nwc"><a href="#链接-https-pan-baidu-com-s-1JgvWbUdRzQtyvsaNTGu1Fw-提取码-3nwc" class="headerlink" title="链接:https://pan.baidu.com/s/1JgvWbUdRzQtyvsaNTGu1Fw 提取码:3nwc"></a>链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1JgvWbUdRzQtyvsaNTGu1Fw">https://pan.baidu.com/s/1JgvWbUdRzQtyvsaNTGu1Fw</a> 提取码:3nwc</h6><p><img src="https://img2020.cnblogs.com/blog/2193560/202012/2193560-20201210172213300-1889264438.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-10 02:52:01" itemprop="dateCreated datePublished" datetime="2021-02-10T02:52:01+08:00">2021-02-10</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="《PYTHON自然语言处理中文版》"><a href="#《PYTHON自然语言处理中文版》" class="headerlink" title="《PYTHON自然语言处理中文版》"></a>《PYTHON自然语言处理中文版》</h4><h6 id="链接-https-pan-baidu-com-s-17LqxjzAmtX8UVMjOuwrVxA-提取码-k8bs"><a href="#链接-https-pan-baidu-com-s-17LqxjzAmtX8UVMjOuwrVxA-提取码-k8bs" class="headerlink" title="链接: https://pan.baidu.com/s/17LqxjzAmtX8UVMjOuwrVxA 提取码: k8bs"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17LqxjzAmtX8UVMjOuwrVxA">https://pan.baidu.com/s/17LqxjzAmtX8UVMjOuwrVxA</a> 提取码: k8bs</h6><p>通过钻研本书，你将学到：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Johngo"
+      src="/images/kekedetecclub_logo3.jpg">
+  <p class="site-author-name" itemprop="name">Johngo</p>
+  <div class="site-description" itemprop="description">技术分享,书籍分享,大数据,数据工程,算法工程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yaojianguolq@163.com" title="E-Mail → mailto:yaojianguolq@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/Johngo103X" title="WeiXin → Johngo103X"><i class="adress-card fa-fw"></i>WeiXin</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="globe fa-fw"></i>
+      友情链接通道
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener" target="_blank">谷歌</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	<!--ip和地域统计信息-->
+	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=_fOQouwsuF2pOPwBQ9L8sojPMaqTH2v7cGFb8Wa5eQY&cl=ffffff&w=a"></script>
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Johngo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">581k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">8:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+<div class="BbeiAn-info">
+京ICP备 -
+<a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784"  rel="nofollow">2020035266</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->|
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020035266" style="color:#f0d784;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow">2020035266</a>          <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'sfTNgv3098BhVImK1DnzeN5m-9Nh9j0Va',
+      appKey     : 'DhfYdMnfvIT8T30ebayJty8M',
+      placeholder: "ヾﾉ≧∀≦)o来啊, 评论说说看...",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":160,"height":320,"hOffset":15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
