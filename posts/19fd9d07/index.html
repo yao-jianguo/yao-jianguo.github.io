@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+<meta name="360-site-verification" content="c18957643638bc25bd0a63c24cc00c32" />
+<meta name="google-site-verification" content="DrH7ugrBSgIOHx1mYn_jgThI0EPHF7kB2pRxkfoTbec" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kekedetecclub_icon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wwww.keketec.club","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="baidu-site-verification" content="code-l9uRmrXQRg" />
+
+
+
+
+
+
+
+
+
+  <meta name="description" content="MoreEffectiveC++中文版PDF下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MoreEffectiveC++中文版 PDF">
+<meta property="og:url" content="http://wwww.keketec.club/posts/19fd9d07/index.html">
+<meta property="og:site_name" content="可可の技术俱乐部">
+<meta property="og:description" content="MoreEffectiveC++中文版PDF下载">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://wwww.keketec.club/images/a20cfc239cf5ffe5c3582fc0036f2f9b1.jpg">
+<meta property="article:published_time" content="2021-02-09T21:46:10.000Z">
+<meta property="article:modified_time" content="2021-02-10T01:26:21.288Z">
+<meta property="article:author" content="Johngo">
+<meta property="article:tag" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://wwww.keketec.club/images/a20cfc239cf5ffe5c3582fc0036f2f9b1.jpg">
+
+<link rel="canonical" href="http://wwww.keketec.club/posts/19fd9d07/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MoreEffectiveC++中文版 PDF | 可可の技术俱乐部</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0c5a95f460eb137dd49e2e64ed9c0b49";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">可可の技术俱乐部</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wwww.keketec.club/posts/19fd9d07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MoreEffectiveC++中文版 PDF
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-10 05:46:10 / 修改时间：09:26:21" itemprop="dateCreated datePublished" datetime="2021-02-10T05:46:10+08:00">2021-02-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">资源分享</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/19fd9d07/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/19fd9d07/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+            <div class="post-description">MoreEffectiveC++中文版PDF下载</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="《MoreEffectiveC-中文版》"><a href="#《MoreEffectiveC-中文版》" class="headerlink" title="《MoreEffectiveC++中文版》"></a>《MoreEffectiveC++中文版》</h4><h6 id="链接-https-pan-baidu-com-s-12hyN9W4EjEbsicLDrmdS-g-提取码-qdd3"><a href="#链接-https-pan-baidu-com-s-12hyN9W4EjEbsicLDrmdS-g-提取码-qdd3" class="headerlink" title="链接: https://pan.baidu.com/s/12hyN9W4EjEbsicLDrmdS-g 提取码: qdd3"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/12hyN9W4EjEbsicLDrmdS-g">https://pan.baidu.com/s/12hyN9W4EjEbsicLDrmdS-g</a> 提取码: qdd3</h6><p>继Effective C++之后，Scott Meyers于1996推出这本“续集”。条款变得比较少，页数倒是多了一些，原因是这次选材比“第一集”更高阶，尤其是第5章。Meyers将此章命名为技术（techniques），并明白告诉你，其中都是一些patterns，例如virtual constructors，smart pointers，reference counting，proxy classes，double dispatching……这一章的每个条款篇幅都达15~30 页之多，实在让人有“山重水复疑无路，柳暗花明又一村”之叹。</p>
+<a id="more"></a>
+
+<p>虽然出版年代稍嫌久远，但本书并没有第2版，原因是当其出版之时（1996），C++ Standard已经几乎定案，本书即依当时的标准草案而写，其与现今的C++ 标准规范几乎相同。而且可能变化的几个弹性之处，Meyers也都有所说明与提示</p>
+<img src="/images/a20cfc239cf5ffe5c3582fc0036f2f9b1.jpg" width="50%" height="50%">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">目 录</span><br><span class="line"></span><br><span class="line">译序（侯捷） ix</span><br><span class="line"></span><br><span class="line">导读（Introduction） 001</span><br><span class="line"></span><br><span class="line">基础议题（Basics） 009</span><br><span class="line"></span><br><span class="line">条款1：仔细区别 pointers 和 references 009</span><br><span class="line"></span><br><span class="line">Distinguish between pointers and references．</span><br><span class="line"></span><br><span class="line">条款2：最好使用 C++ 转型操作符 012</span><br><span class="line"></span><br><span class="line">Prefer C++-style casts．</span><br><span class="line"></span><br><span class="line">条款3：绝对不要以多态（polymorphically）方式处理数组 016</span><br><span class="line"></span><br><span class="line">Never treat arrays polymorphically．</span><br><span class="line"></span><br><span class="line">条款4：非必要不提供 default constructor 019</span><br><span class="line"></span><br><span class="line">Avoid gratuitous default constructors．</span><br><span class="line"></span><br><span class="line">操作符（Operators） 024</span><br><span class="line"></span><br><span class="line">条款5：对定制的“类型转换函数”保持警觉 024</span><br><span class="line"></span><br><span class="line">Be wary of user-defined conversion functions．</span><br><span class="line"></span><br><span class="line">条款6：区别 increment&#x2F;decrement 操作符的</span><br><span class="line"></span><br><span class="line">前置（prefix）和后置（postfix）形式 031</span><br><span class="line"></span><br><span class="line">Distinguish between prefix and postfix forms of increment</span><br><span class="line"></span><br><span class="line">and decrement operators．</span><br><span class="line"></span><br><span class="line">条款7：千万不要重载＆＆，||和， 操作符 035</span><br><span class="line"></span><br><span class="line">Never overload ＆＆， ||， or ，．</span><br><span class="line"></span><br><span class="line">条款8：了解各种不同意义的 new 和 delete 038</span><br><span class="line"></span><br><span class="line">Understand the different meanings of new and delete</span><br><span class="line"></span><br><span class="line">异常（Exceptions） 044</span><br><span class="line"></span><br><span class="line">条款9：利用 destructors 避免泄漏资源 045</span><br><span class="line"></span><br><span class="line">Use destructors to prevent resource leaks．</span><br><span class="line"></span><br><span class="line">条款10：在 constructors 内阻止资源泄漏（resource leak） 050</span><br><span class="line"></span><br><span class="line">Prevent resource leaks in constructors．</span><br><span class="line"></span><br><span class="line">条款11：禁止异常（exceptions）流出 destructors 之外 058</span><br><span class="line"></span><br><span class="line">Prevent exceptions from leaving destructors．</span><br><span class="line"></span><br><span class="line">条款12：了解“抛出一个 exception”与“传递一个参数”</span><br><span class="line"></span><br><span class="line">或“调用一个虚函数”之间的差异 061</span><br><span class="line"></span><br><span class="line">Understand how throwing an exception differs from</span><br><span class="line"></span><br><span class="line">passing a parameter or calling a virtual function．</span><br><span class="line"></span><br><span class="line">条款13：以 by reference 方式捕捉 exceptions 068</span><br><span class="line"></span><br><span class="line">Catch exceptions by reference．</span><br><span class="line"></span><br><span class="line">条款14：明智运用 exception specifications 072</span><br><span class="line"></span><br><span class="line">Use exception specifications judiciously．</span><br><span class="line"></span><br><span class="line">条款15：了解异常处理（exception handling）的成本 078</span><br><span class="line"></span><br><span class="line">Understand the costs of exception handling．</span><br><span class="line"></span><br><span class="line">效率（Efficiency） 081</span><br><span class="line"></span><br><span class="line">条款16：谨记 80-20 法则 082</span><br><span class="line"></span><br><span class="line">Remember the 80-20 rule．</span><br><span class="line"></span><br><span class="line">条款17：考虑使用 lazy evaluation（缓式评估） 085</span><br><span class="line"></span><br><span class="line">Consider using lazy evaluation．</span><br><span class="line"></span><br><span class="line">条款18：分期摊还预期的计算成本 093</span><br><span class="line"></span><br><span class="line">Amortize the cost of expected computations．</span><br><span class="line"></span><br><span class="line">条款19：了解临时对象的来源 098</span><br><span class="line"></span><br><span class="line">Understand the origin of temporary objects．</span><br><span class="line"></span><br><span class="line">条款20：协助完成“返回值优化（RVO）” 101</span><br><span class="line"></span><br><span class="line">Facilitate the return value optimization．</span><br><span class="line"></span><br><span class="line">条款21：利用重载技术（overload）避免隐式类型转换（implict type conversions）105</span><br><span class="line"></span><br><span class="line">Overload to avoid implicit type conversions．</span><br><span class="line"></span><br><span class="line">条款22：考虑以操作符复合形式（op&#x3D;）取代其独身形式（op） 107</span><br><span class="line"></span><br><span class="line">Consider using op&#x3D; instead of stand-alone op．</span><br><span class="line"></span><br><span class="line">条款23：考虑使用其他程序库 110</span><br><span class="line"></span><br><span class="line">Consider alternative libraries．</span><br><span class="line"></span><br><span class="line">条款24：了解 virtual functions、multiple inheritance、virtual base classes、</span><br><span class="line"></span><br><span class="line">runtime type identification 的成本 113</span><br><span class="line"></span><br><span class="line">Understand the costs of virtual functions， multiple inheritance，</span><br><span class="line"></span><br><span class="line">virtual base classes， and RTTI．</span><br><span class="line"></span><br><span class="line">技术（Techniques， Idioms， Patterns） 123</span><br><span class="line"></span><br><span class="line">条款25：将 constructor 和 non-member functions 虚化 123</span><br><span class="line"></span><br><span class="line">Virtualizing constructors and non-member functions．</span><br><span class="line"></span><br><span class="line">条款26：限制某个 class 所能产生的对象数量 130</span><br><span class="line"></span><br><span class="line">Limiting the number of objects of a class．</span><br><span class="line"></span><br><span class="line">条款27：要求（或禁止）对象产生于 heap 之中 145</span><br><span class="line"></span><br><span class="line">Requiring or prohibiting heap-based objects．</span><br><span class="line"></span><br><span class="line">条款28：Smart Pointers（智能指针） 159</span><br><span class="line"></span><br><span class="line">条款29：Reference counting（引用计数） 183</span><br><span class="line"></span><br><span class="line">条款30：Proxy classes（替身类、代理类） 213</span><br><span class="line"></span><br><span class="line">条款31：让函数根据一个以上的对象类型来决定如何虚化 228</span><br><span class="line"></span><br><span class="line">Making functions virtual with respect to more than one object．</span><br><span class="line"></span><br><span class="line">杂项讨论（Miscellany） 252</span><br><span class="line"></span><br><span class="line">条款32：在未来时态下发展程序 252</span><br><span class="line"></span><br><span class="line">Program in the future tense．</span><br><span class="line"></span><br><span class="line">条款33：将非尾端类（non-leaf classes）设计为</span><br><span class="line"></span><br><span class="line">抽象类（abstract classes） 258</span><br><span class="line"></span><br><span class="line">Make non-leaf classes abstract．</span><br><span class="line"></span><br><span class="line">条款34：如何在同一个程序中结合 C++ 和 C 270</span><br><span class="line"></span><br><span class="line">Understand how to combine C++ and C in the same program．</span><br><span class="line"></span><br><span class="line">条款35：让自己习惯于标准 C++ 语言 277</span><br><span class="line"></span><br><span class="line">Familiarize yourself with the language standard．</span><br><span class="line"></span><br><span class="line">推荐读物 285</span><br><span class="line"></span><br><span class="line">auto_ptr 实现代码 291</span><br><span class="line"></span><br><span class="line">索引（一）（General Index） 295</span><br><span class="line"></span><br><span class="line">索引（二）（Index of Example Classes，Functions，and Templtes） 313</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<p>最后，这里为大家准备了几百本的互联网电子书，有需要的过来取吧。<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">点击获取</a></p>
+<p><em>本页书籍均来自网络，如有侵权，请联系我立即删除。我的邮箱：<a href="mailto:&#121;&#x61;&#111;&#x6a;&#x69;&#97;&#x6e;&#x67;&#117;&#111;&#108;&#x71;&#64;&#49;&#x36;&#51;&#46;&#x63;&#111;&#x6d;">&#121;&#x61;&#111;&#x6a;&#x69;&#97;&#x6e;&#x67;&#117;&#111;&#108;&#x71;&#64;&#49;&#x36;&#51;&#46;&#x63;&#111;&#x6d;</a></em></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Johngo 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Johngo 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+	<div>
+    		
+    		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:20px;">------ 全文结束------</div>
+    
+</div>
+
+    		
+	 </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Johngo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wwww.keketec.club/posts/19fd9d07/" title="MoreEffectiveC++中文版 PDF">http://wwww.keketec.club/posts/19fd9d07/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信公众号「更多前沿技术和互联网资讯」</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/879908a4/" rel="prev" title="MySQL必知必会 PDF">
+      <i class="fa fa-chevron-left"></i> MySQL必知必会 PDF
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/6efaad91/" rel="next" title="MongoDB权威指南 PDF">
+      MongoDB权威指南 PDF <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%8AMoreEffectiveC-%E4%B8%AD%E6%96%87%E7%89%88%E3%80%8B"><span class="nav-number">1.</span> <span class="nav-text">《MoreEffectiveC++中文版》</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5-https-pan-baidu-com-s-12hyN9W4EjEbsicLDrmdS-g-%E6%8F%90%E5%8F%96%E7%A0%81-qdd3"><span class="nav-number">1.0.1.</span> <span class="nav-text">链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;12hyN9W4EjEbsicLDrmdS-g 提取码: qdd3</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Johngo"
+      src="/images/kekedetecclub_logo3.jpg">
+  <p class="site-author-name" itemprop="name">Johngo</p>
+  <div class="site-description" itemprop="description">技术分享,书籍分享,大数据,数据工程,算法工程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">141</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yaojianguolq@163.com" title="E-Mail → mailto:yaojianguolq@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/Johngo103X" title="WeiXin → Johngo103X"><i class="adress-card fa-fw"></i>WeiXin</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="globe fa-fw"></i>
+      友情链接通道
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener" target="_blank">谷歌</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	<!--ip和地域统计信息-->
+	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=_fOQouwsuF2pOPwBQ9L8sojPMaqTH2v7cGFb8Wa5eQY&cl=ffffff&w=a"></script>
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Johngo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">585k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">8:52</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+<div class="BbeiAn-info">
+京ICP备 -
+<a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784"  rel="nofollow">2020035266</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->|
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020035266" style="color:#f0d784;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow">2020035266</a>          <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'sfTNgv3098BhVImK1DnzeN5m-9Nh9j0Va',
+      appKey     : 'DhfYdMnfvIT8T30ebayJty8M',
+      placeholder: "ヾﾉ≧∀≦)o来啊, 评论说说看...",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":160,"height":320,"hOffset":15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
