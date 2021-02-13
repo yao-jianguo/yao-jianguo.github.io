@@ -1,0 +1,7 @@
+User-agent: * Allow: /
+Allow: /archives/
+Disallow: /vendors/
+Disallow: /categories/
+
+Sitemap: http://www.keketec.club/sitemap.xml
+Sitemap: http://www.keketec.club/baidusitemap.xml
