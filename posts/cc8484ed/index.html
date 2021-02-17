@@ -257,14 +257,6 @@
             </span>
 
           
-            <span id="/posts/cc8484ed/" class="post-meta-item leancloud_visitors" data-flag-title="推荐算法在业界的应用实践合集 PDF" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-		<span>℃</span>
-            </span>
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -291,7 +283,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>532</span>
+              <span>531</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -323,7 +315,7 @@
 <h6 id="有问题拿不到直接联系作者哦！"><a href="#有问题拿不到直接联系作者哦！" class="headerlink" title="有问题拿不到直接联系作者哦！"></a>有问题拿不到直接联系作者哦！</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">目录</span><br><span class="line"></span><br><span class="line">从推荐推理奔向未来 AI</span><br><span class="line"></span><br><span class="line">达观数据个性化推荐系统实践</span><br><span class="line"></span><br><span class="line">Embedding 技术在民宿推荐中的应用</span><br><span class="line"></span><br><span class="line">过 程 的 推 荐 多 样 性 提 升 算 法 </span><br><span class="line"></span><br><span class="line">: 深 度 学 习 排 序 系 统 及 模 型 </span><br><span class="line"></span><br><span class="line">验 证 周 期 场 景 下 的 算 法 设 计 </span><br><span class="line"></span><br><span class="line">能 导 购 推 荐 技 术 实 践 </span><br><span class="line"></span><br><span class="line">随 谈 </span><br><span class="line"></span><br><span class="line">分享平台:DataFun 公众号:DataFunTalk</span><br><span class="line"></span><br><span class="line">4</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">美 图 个 性 化 推 送 的 AI 探 索 之 路 </span><br><span class="line"></span><br><span class="line">深度学习在阿里 B2B 电商推荐系统中的实践</span><br><span class="line"></span><br><span class="line">问题上的应用</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <hr>
 <p>最后，这里为大家准备了几百本的互联网电子书，有需要的过来取吧。<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">点击获取</a></p>
-<p><em>本页书籍均来自网络，如有侵权，请联系我立即删除。我的邮箱：<a href="mailto:&#x79;&#97;&#x6f;&#106;&#105;&#97;&#110;&#103;&#117;&#111;&#108;&#x71;&#64;&#x31;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#97;&#x6f;&#106;&#105;&#97;&#110;&#103;&#117;&#111;&#108;&#x71;&#64;&#x31;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;</a></em></p>
+<p><em>本页书籍均来自网络，如有侵权，请联系我立即删除。我的邮箱：<a href="mailto:&#x79;&#97;&#111;&#106;&#x69;&#x61;&#x6e;&#103;&#x75;&#111;&#108;&#x71;&#64;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;">&#x79;&#97;&#111;&#106;&#x69;&#x61;&#x6e;&#103;&#x75;&#111;&#108;&#x71;&#64;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;</a></em></p>
 
     </div>
 
@@ -606,92 +598,6 @@
 
 
 
-<script>
-  (function() {
-    function leancloudSelector(url) {
-      url = encodeURI(url);
-      return document.getElementById(url).querySelector('.leancloud-visitors-count');
-    }
-
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.id);
-      var title = visitors.dataset.flagTitle;
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            leancloudSelector(url).innerText = counter.time + 1;
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              });
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.id);
-      });
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          for (let url of entries) {
-            let target = results.find(item => item.url === url);
-            leancloudSelector(url).innerText = target ? target.time : 0;
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"sfTNgv3098BhVImK1DnzeN5m-9Nh9j0Va","app_key":"DhfYdMnfvIT8T30ebayJty8M","server_url":"www.keketec.club","security":true};
-    function fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${api_server}/1.1${url}`, {
-          method,
-          headers: {
-            'X-LC-Id'     : app_id,
-            'X-LC-Key'    : app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    }
-
-    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(response => response.json())
-        .then(({ api_server }) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
 
 
       </div>
