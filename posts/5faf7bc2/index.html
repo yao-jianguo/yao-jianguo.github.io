@@ -324,10 +324,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <img src="/images/b046fbe0f5ceead771b5ceeeaf5f7eed1.jpg" width="50%" height="50%">
-
-<p><em>六个案例由浅入深把动态规划说明白！！！</em></p>
-<a id="more"></a>
+        <p><img src="/images/b046fbe0f5ceead771b5ceeeaf5f7eed1.jpg" width="50%" height="50%"></p>
+<p><em>六个案例由浅入深把动态规划说明白！！！</em><br><a id="more"></a></p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">首先，先大致列下这篇文章会讲到什么</span><br><span class="line">    1.相较于暴力解法，动态规划带给我们的是什么？为什么会有重叠子问题以及怎么去避免的?</span><br><span class="line">    2.用不同难度的动态规划问题举例说明， 最后会使用《打家劫舍》系列三个题再重温一次.</span><br><span class="line">一、动态规划带给我们的优势</span><br><span class="line">传统递归 vs. DP</span><br><span class="line">    1. 先 递归解决</span><br><span class="line">    2. 后 动态规划解决</span><br><span class="line">    3. 动态规划 + 优化</span><br><span class="line">二、动态规划四大解题步骤处理问题</span><br><span class="line">    步骤一：定义dp数组的含义</span><br><span class="line">    步骤二：定义状态转移方程</span><br><span class="line">    步骤三：初始化过程转移的初始值</span><br><span class="line">    步骤四：可优化点(可选)</span><br><span class="line">案例一：打家劫舍I 「来自leetcode198」</span><br><span class="line">    步骤一： 定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化数值设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例二：不同路径「来自leetcode62」</span><br><span class="line">    步骤一：定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化数值设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例三：不同路径II 「来自leetcode63」</span><br><span class="line">    步骤一：定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化数值设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例四：打家劫舍II 「来自leetcode213」</span><br><span class="line">    步骤一： 定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化设定</span><br><span class="line">    步骤四：优化</span><br><span class="line">案例五：打家劫舍III 「来自leetcode337」</span><br><span class="line">    步骤一： 定义dp数组的含义</span><br><span class="line">    步骤二：找出关系元素间的动态方程</span><br><span class="line">    步骤三：初始化设定</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>动态规划 - 超详细系列</p>
@@ -348,8 +346,6 @@
 <p>Fibonacci几乎完美的诠释了<strong>动态规划带来的思想和技巧</strong>然而没有任何其他的要考虑的细枝末节，这种很清晰的方法看起来很适合整个的动态规划的思维方式，很适合入门来进行的思考方式.</p>
 <p>接下来咱们先来看题目：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">写一个函数，输入n，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：</span><br><span class="line"></span><br><span class="line">F(0) &#x3D; 0, F(1) &#x3D; 1</span><br><span class="line">F(N) &#x3D; F(N - 1) + F(N - 2), 其中 N &gt; 1.</span><br><span class="line">斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。</span><br></pre></td></tr></table></figure>
-
-
 <p>比较一下传统递归解法和动态规划思想下的解决对比</p>
 <h4 id="1-先-递归解决"><a href="#1-先-递归解决" class="headerlink" title="1. 先 递归解决"></a>1. 先 递归解决</h4><p>传统对于这种题目的思考方式会利用递归求解，做起来比较简单，就是不断的去递归调用，看下面代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fib_recur</span>(<span class="params">self, N</span>):</span></span><br><span class="line">        <span class="built_in">print</span> <span class="string">&quot;F(&quot;</span>,self.i,<span class="string">&quot;) = &quot;</span>, N   <span class="comment"># 此处仅仅来看递归输出的N</span></span><br><span class="line">        self.i += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> N &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> N</span><br><span class="line">        <span class="keyword">return</span> self.fib_recur(N-<span class="number">1</span>) + self.fib_recur(N-<span class="number">2</span>)  <span class="comment"># 递归输出</span></span><br></pre></td></tr></table></figure>
@@ -363,15 +359,13 @@
 <p>参考图中相同颜色的项，比如说粉色的重复计算、黄色的重复计算等</p>
 <p>注意：递归中没有对空间进行了增加，始终都是同样的长度，仅仅是不断的弹出和压入</p>
 </blockquote>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106361.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106361.jpg" width="50%" height="50%"></p>
 <p>为了更好的说明这种重复计算带来时间效率的低下。再比如说，相比上述图中的计算节点，再增加一个节点的计算，增加计算F(5)，那么由于递归的计算方式，会有更多的项（下图中线框中部分）进行了重复的计算。在计算<code>F(5)</code>的时候，会递归调用<code>F(4)</code>和<code>F(3)</code>，而在下图中，计算<code>F(4)</code>的时候，又会完整的去计算<code>F(3)</code>。这样，如果N很大的话，会有更大的时间消耗. </p>
 <p>这样，这棵树的规模进行进行成倍增加，时间复杂度很明显的进行了成倍的扩张。对于时间上来说是很恐怖的.</p>
 <p>时间复杂度带来的低效率严重超过了代码的可读性，所以我们可以想办法将<strong>过去计算</strong>过的节点<strong>进行保存</strong>。这样，我们就会用到下面要说的动态规划思想带来的时间上的高效. </p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106362.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106362.jpg" width="50%" height="50%"></p>
 <blockquote>
-<p>时间复杂度：$O(2^N)$   —&gt; 指数级</p>
+<p>时间复杂度：$O(2^N)$   —-&gt; 指数级</p>
 <p>空间复杂度：$O(N)$</p>
 </blockquote>
 <h4 id="2-后-动态规划解决"><a href="#2-后-动态规划解决" class="headerlink" title="2. 后 动态规划解决"></a>2. 后 动态规划解决</h4><p><strong>大概解释一下字面意思：</strong></p>
@@ -384,15 +378,14 @@
 <p>F(0) = 0, F(1) = 1</p>
 <p>F(N) = F(N - 1) + F(N - 2),  when N &gt; 1</p>
 <p>那么，👇👇F(N) 的值只与他的前两个状态有关系👇👇</p>
-<p>a. 初始化值 : F(0) = 0, F(1) = 1<br>b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   –&gt;  保存 F(2)<br>c. 想要计算得到F(3)， 那么F(3) = F(2) + F(1)   –&gt;  保存 F(3)<br>d. 想要计算得到F(3)， 那么F(4) = F(3) + F(2)   –&gt;  保存 F(4)</p>
+<p>a. 初始化值 : F(0) = 0, F(1) = 1<br>b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   —&gt;  保存 F(2)<br>c. 想要计算得到F(3)， 那么F(3) = F(2) + F(1)   —&gt;  保存 F(3)<br>d. 想要计算得到F(3)， 那么F(4) = F(3) + F(2)   —&gt;  保存 F(4)</p>
 <p>利用动态规划思想，以一维数组辅助实现的Fibonacci，看下图</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106363.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106363.jpg" width="50%" height="50%"></p>
 <p>是不是很简单的思路，仅仅靠保存过程中的一些值就能很简单的利用循环就可以实现了，没必要用递归反复计算进行实现。</p>
 <p>想要计算得到第 n 个值的多少？那么，以下几点是我们必须要做到的</p>
-<p>​    a. <strong>定义一个一维数组</strong>   —&gt;  一般用dp来命名</p>
-<p>​    b. <strong>动态方程的设定</strong>   —&gt;  题中的F(N) = F(N - 1) + F(N - 2)</p>
-<p>​    c. <strong>初始化数值</strong>   —&gt;  F(0) = 0和F(1) = 1</p>
+<p>​    a. <strong>定义一个一维数组</strong>   —-&gt;  一般用dp来命名</p>
+<p>​    b. <strong>动态方程的设定</strong>   —-&gt;  题中的F(N) = F(N - 1) + F(N - 2)</p>
+<p>​    c. <strong>初始化数值</strong>   —-&gt;  F(0) = 0和F(1) = 1</p>
 <p>上述的 a、b 和 c 点就是动态规划思想的几个核心要素</p>
 <p>下面来看下要实现的代码（代码中，用dp来代替上面的F()）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fib</span>(<span class="params">self, N</span>):</span></span><br><span class="line">        <span class="keyword">if</span> N == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">     </span><br><span class="line">        dp = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(N+<span class="number">1</span>)] <span class="comment"># 1定义dp[i]保存第i个计算得到的数值</span></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>       <span class="comment"># 2初始化</span></span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>            <span class="comment"># 2初始化</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, N+<span class="number">1</span>):    <span class="comment"># 3动态方程实现，由于0和1都实现了赋值，现在需要从第2个位置开始赋值</span></span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]</span><br><span class="line">       </span><br><span class="line">        <span class="built_in">print</span> dp         <span class="comment"># 记录计算过程中的次数，与上述递归形成对比</span></span><br><span class="line">        <span class="keyword">return</span> dp[N]</span><br></pre></td></tr></table></figure>
@@ -407,24 +400,18 @@
 <hr>
 <p>既然动态规划的方案也介绍了，下面咱们再仔细看看，是否有优化的空间，毕竟对于一个算法方案的设计，都有找到其优化点，无论是时间还是空间的效率都想要达到一个理想的值。</p>
 <h4 id="3-动态规划-优化"><a href="#3-动态规划-优化" class="headerlink" title="3. 动态规划 + 优化"></a>3. 动态规划 + 优化</h4><p>咱们看下这张图解，发现每个计算节点都<strong>只与前两个项有关系</strong>。换句话说，咱们只要保存两个值就好了，计算新的节点值的时候，把新的值赋值给前两个值的第一个就好了</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106364.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106364.jpg" width="50%" height="50%"></p>
 <p>话说只要两个值，现在定义两个变量 dp1 和 dp2。那么，现在咱们一步一步模拟一下：</p>
 <p>a. 初始化值 : F(0) = 0, F(1) = 1</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106365.jpg" width="50%" height="50%">
-b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106365.jpg" width="50%" height="50%"><br>b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   —&gt;  保存 F(2)</p>
 <p>​    顺带将F(1)赋值给dp1， f(2)赋值给dp2</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106366.jpg" width="50%" height="50%">
-
-<p>c. 想要计算得到F(3)， 那么F(3) = F(2) + F(1)   –&gt;  保存 F(3)</p>
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106366.jpg" width="50%" height="50%"></p>
+<p>c. 想要计算得到F(3)， 那么F(3) = F(2) + F(1)   —&gt;  保存 F(3)</p>
 <p>​    顺带将F(2)赋值给dp1， F(3)赋值给dp2</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106367.jpg" width="50%" height="50%">
-
-<p>d. 想要计算得到F(3)， 那么F(4) = F(3) + F(2)   –&gt;  保存 F(4)</p>
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106367.jpg" width="50%" height="50%"></p>
+<p>d. 想要计算得到F(3)， 那么F(4) = F(3) + F(2)   —&gt;  保存 F(4)</p>
 <p>​    顺带将F(3)赋值给dp1， F(4)赋值给dp2</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda106368.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda106368.jpg" width="50%" height="50%"></p>
 <p>至此为止，整个过程仅仅用到了两个变量来存储过程中产生的值，也就之前没有优化的空间效率得到了优化</p>
 <p>咱们把代码也贴一下吧，供参考</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fib_dp1</span>(<span class="params">self, N</span>):</span></span><br><span class="line">        <span class="keyword">if</span> N == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        dp1, dp2 = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, N+<span class="number">1</span>):</span><br><span class="line">            dp1 = dp1 + dp2</span><br><span class="line">            dp1, dp2 = dp2, dp1</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp2</span><br></pre></td></tr></table></figure>
@@ -465,8 +452,6 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 偷窃 1 号房屋 (金额 &#x3D; 1) ，然后偷窃 3 号房屋 (金额 &#x3D; 3)。</span><br><span class="line">     偷窃到的最高金额 &#x3D; 1 + 3 &#x3D; 4 。</span><br></pre></td></tr></table></figure>
 <p><strong>示例2：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">2</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出: <span class="number">12</span></span><br><span class="line">解释: 偷窃 <span class="number">1</span> 号房屋 (金额 = <span class="number">2</span>), 偷窃 <span class="number">3</span> 号房屋 (金额 = <span class="number">9</span>)，接着偷窃 <span class="number">5</span> 号房屋 (金额 = <span class="number">1</span>)。</span><br><span class="line">     偷窃到的最高金额 = <span class="number">2</span> + <span class="number">9</span> + <span class="number">1</span> = <span class="number">12</span> 。</span><br></pre></td></tr></table></figure>
-
-
 <p>把经典案例系列拆分开讨论下吧，咱们首先将「打家劫舍I」来看看</p>
 <p>该题可以用动态规划的思想来解决的原因是，在小偷不断偷取的过程中，始终想要偷得的物品价值最大，最优，每一步骤都与之前的偷取情况有关系，而且每一步都要考虑是否能偷，是否会带来最大利益，这就使得我们可以用动态规划的思想来解决问题。  然后严格按照四步骤进行解题. </p>
 <h5 id="步骤一：-定义dp数组的含义"><a href="#步骤一：-定义dp数组的含义" class="headerlink" title="步骤一： 定义dp数组的含义"></a>步骤一： 定义dp数组的含义</h5><p>​    之前提到的，dp数组存储的值一般代表截止目前的最优值，在该题目中，我们定义：</p>
@@ -476,11 +461,9 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <p>​    也就是想要得到dp[i]的值，我们必须要知道dp[i-1]，dp[i-2]，dp[i-3] … 的每一步的最优值，在这个状态转移的过程中，我们必须要想清楚怎么去定义关系式。然而在每一步的计算中，都与前几项有关系，这个固定的关系就是我们要寻找的重叠子问题，也同样是接下来要详细定义的动态方程</p>
 <p>​    该题目中，当小偷到达第 i 个屋子的时候，他的选择有两种：一种是偷，另外一种是不偷， 然后选择价值较大者</p>
 <p>​    a. 偷的情况计算：必然是dp[3] = nums[2] + dp[1]，如果是偷取该屋子的话，相邻屋子是不能偷取的，因此，通项式子是：dp[i] =  nums[i-1] + dp[i-2]</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063610.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063610.jpg" width="50%" height="50%"></p>
 <p>​    b. 不偷的情况计算：必然是dp[3] = dp[2]，如果是不偷取该屋子的话，相邻屋子就是其最优值，因此，通项式子是：dp[i] =  dp[i-1]</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063611.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063611.jpg" width="50%" height="50%"></p>
 <p>​    最后，要想偷得最高金额，那么，必须选取在偷与不偷之间的最大值作为我们是否选取的关键点。即：</p>
 <p>​    <strong>动态方程:</strong> dp[i] = max(dp[i-1], nums[i-1]+dp[i-2])</p>
 <h5 id="步骤三：初始化数值设定"><a href="#步骤三：初始化数值设定" class="headerlink" title="步骤三：初始化数值设定"></a>步骤三：初始化数值设定</h5><p>​    初始化: 给没有房子时，dp一个位置，即：dp[0]<br>​        1 当size=0时，没有房子，dp[0]=0；<br>​        2 当size=1时，有一间房子，偷即可：dp[1]=nums[0]</p>
@@ -507,8 +490,7 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <h3 id="案例二：不同路径「来自leetcode62」"><a href="#案例二：不同路径「来自leetcode62」" class="headerlink" title="案例二：不同路径「来自leetcode62」"></a>案例二：不同路径「来自leetcode62」</h3><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</p>
 <p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</p>
 <p>问总共有多少条不同的路径？</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063612.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063612.jpg" width="50%" height="50%"></p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: m = <span class="number">3</span>, n = <span class="number">2</span></span><br><span class="line">输出: <span class="number">3</span></span><br><span class="line">解释:</span><br><span class="line">从左上角开始，总共有 <span class="number">3</span> 条路径可以到达右下角。</span><br><span class="line"></span><br><span class="line">1. 向右 -&gt; 向右 -&gt; 向下</span><br><span class="line">2. 向右 -&gt; 向下 -&gt; 向右</span><br><span class="line">3. 向下 -&gt; 向右 -&gt; 向右</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2:</strong></p>
@@ -538,21 +520,16 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <p>既然到这里了，下面再想想看有没有可优化的地方</p>
 <h5 id="步骤四：优化-1"><a href="#步骤四：优化-1" class="headerlink" title="步骤四：优化"></a>步骤四：优化</h5><p>​    可以依照前面的解决的思路，应该也可以从空间上进行一定的优化</p>
 <p>​    参照前面的案例，之前定义的是一维数组dp，优化点是每一步骤都只与前面的两个计算好的数值有关系，然后优化点就是将dp[N] -&gt; dp1和dp2，空间复杂度由 O(N) -&gt; O(1)，如果是很大规模的数据计算的话，空间效率提升了不少.</p>
-<p>​    现在这个例子中的动态方程是*<em>dp[i][j] = dp[i-1][j] + dp[i][j-1]**，很明显，每一步骤中的状态值只与左边相邻的值和上面的值相关。举例（为了方便，用 3</em>4 来举例）：</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063613.jpg" width="50%" height="50%">
-
+<p>​    现在这个例子中的动态方程是<strong>dp[i][j] = dp[i-1][j] + dp[i][j-1]</strong>，很明显，每一步骤中的状态值只与左边相邻的值和上面的值相关。举例（为了方便，用 3*4 来举例）：</p>
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063613.jpg" width="50%" height="50%"></p>
 <p>​    这个完整的图片描述中，机器人从左上角的位置(1, 1)开始移动，逐渐每一步都根据动态方程进行前进，明显的可以看出机器人每移动一格，所得到的路径总和只与它的上方和左方数值有关系。也就是我们会发现，机器人移动到第2行的时候，第0行数据完全是没有用的状态。</p>
 <p>​    因此，这个优化点就出来了，在算法设计的时候，dp仅仅定义2行N列的数组就ok了，省去了m-2行的空间开销。这个代码如果大家想明白了请自行设计出来，自己写出来一定会有更加深刻的理解，再强调：多思考，形成潜移默化的思维方式.</p>
 <p>​    看完这个步骤之后，是不是很明显的优化点，为什么上面没有给出大家代码呢？是因为我看到貌似可以继续优化的点（粘住空间优化项了哈哈哈），那就继续在空间开销上做文章。</p>
 <p>​    <strong>引导：</strong>根据上述咱们的优化方案，说道 “机器人移动到第2行的时候，第0行数据完全是没有用的状态”，其实当前聪明的读者你想想，再看看，下面的图中（从上图截取过来）。 其实，不仅仅是第 0 行完全没用了，而且在第2 行做移动的时候，移动到位置(i, j)的时候，计算好位置(i, j)，那么接下来，位置(i-1, j)的数据也就没用了。换句话说，边走，第 1 行开始的某些数据也就没用了，还在占着空间</p>
 <p>​    <strong>这块大家一定多想想，多理解，多画图</strong></p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063614.jpg" width="50%" height="50%">
-
-
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063614.jpg" width="50%" height="50%"></p>
 <p>下面按照这种思路，看下图的步骤，也画好了用一维数组进行解决问题，也画出来每一步骤与上图的类比过程：</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063615.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063615.jpg" width="50%" height="50%"></p>
 <p>在这里，有犯困的同学可以自己动手画一画，理解一下，个人感觉是一个很好的思维扩展</p>
 <p>接下来，就按照这样的思路进行代码实现，会发现码起来很简单</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">uniquePaths2</span>(<span class="params">self, m, n</span>):</span></span><br><span class="line">        <span class="keyword">if</span> m &gt; n:</span><br><span class="line">            m, n = n, m</span><br><span class="line"></span><br><span class="line">        dp = [<span class="number">1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">                dp[j] = dp[j] + dp[j-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
@@ -566,31 +543,24 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <h3 id="案例三：不同路径II-「来自leetcode63」"><a href="#案例三：不同路径II-「来自leetcode63」" class="headerlink" title="案例三：不同路径II 「来自leetcode63」"></a>案例三：不同路径II 「来自leetcode63」</h3><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</p>
 <p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</p>
 <p>现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063616.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063616.jpg" width="50%" height="50%"></p>
 <blockquote>
 <p>说明：m 和 n 的值均不超过 100。</p>
 </blockquote>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">  [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>],</span><br><span class="line">  [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">]</span><br><span class="line">输出: <span class="number">2</span></span><br><span class="line">解释:</span><br><span class="line">3x3 网格的正中间有一个障碍物。</span><br><span class="line">从左上角到右下角一共有 <span class="number">2</span> 条不同的路径：</span><br><span class="line"></span><br><span class="line">1. 向右 -&gt; 向右 -&gt; 向下 -&gt; 向下</span><br><span class="line">2. 向下 -&gt; 向下 -&gt; 向右 -&gt; 向右</span><br></pre></td></tr></table></figure>
-
-
 <p><strong>咱们先看一下题中的两个关键点：</strong><br>关键点1：只能向右或者向下<br>关键点2：有障碍物为1， 无障碍物为0</p>
 <p>根据 关键点1 和 关键点2 依然按照四个步骤来进行讨论：</p>
 <h5 id="步骤一：定义dp数组的含义-2"><a href="#步骤一：定义dp数组的含义-2" class="headerlink" title="步骤一：定义dp数组的含义"></a>步骤一：定义dp数组的含义</h5><p>  这个题目中定义的dp数组是和上一个例题中定义的dp数组的含义是相同的，但由于该题中已经定义有数组obstacleGrid，可以直接利用，无需额外开辟空间<br>  那么，就利用obstacleGrid作为动态规划中存储计算过程中的最优值</p>
 <h5 id="步骤二：找出关系元素间的动态方程-2"><a href="#步骤二：找出关系元素间的动态方程-2" class="headerlink" title="步骤二：找出关系元素间的动态方程"></a>步骤二：找出关系元素间的动态方程</h5><p>  参照上一题目，规定动态方程: obstacleGrid[i][j] = obstacleGrid[i-1][j] + obstacleGrid[i][j-1]<br>  由于机器人在移动过程中有障碍物，那么，对上面动态方程加一些限制条件<br>  a.若当前 obstacleGrid[i][j] 为0。那么，直接计算动态方程下的计算过程<br>  b.若当前 obstacleGrid[i][j] 不为0。那么，直接置该位置的值为0</p>
 <p>  所以，在进行动态方程遍历的时候，先进行 obstacleGrid[i][j]的判断，再进行动态方程的计算执行</p>
 <h5 id="步骤三：初始化数值设定-2"><a href="#步骤三：初始化数值设定-2" class="headerlink" title="步骤三：初始化数值设定"></a>步骤三：初始化数值设定</h5><p>​    相比于上一题目，相似的是，在机器人走第 0 行，第 0 列的时候，无论怎么走，都只有 1 种走法<br>​    但由于有障碍物，那走到障碍物的时候，后面都是走不下去的（下图用第一行来举例）。</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063617.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063617.jpg" width="50%" height="50%"></p>
 <p>​    所以，初始化第 0 行，第 0 列的时候，障碍物 1 后面的都是不可达的。所以，初始化行和列的逻辑表达：</p>
 <p>​    <strong>该位置是否可达=前一个位置的状态and该位置能否可达 得到能否到达这个位置</strong></p>
 <p>​    只有前一个位置为1（可达，只有1种方式） ，当前位置为0（无障碍物）这种情况才能到达该位置，然后为该位置设 1 （可达，只有1种方式）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0 行初始化表达式: </span></span><br><span class="line">obstacleGrid[<span class="number">0</span>][row] = <span class="built_in">int</span>(obstacleGrid[<span class="number">0</span>][row] == <span class="number">0</span> <span class="keyword">and</span> obstacleGrid[<span class="number">0</span>][row-<span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line"><span class="comment"># 0 列初始化表达式: </span></span><br><span class="line">obstacleGrid[clo][<span class="number">0</span>] = <span class="built_in">int</span>(obstacleGrid[clo][<span class="number">0</span>] == <span class="number">0</span> <span class="keyword">and</span> obstacleGrid[clo-<span class="number">1</span>][<span class="number">0</span>] == <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-<p>  这些都准备就绪之后，按照相关思路进行编码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">uniquePathsWithObstacles1</span>(<span class="params">self, obstacleGrid</span>):</span></span><br><span class="line">          <span class="comment"># 行列长度</span></span><br><span class="line">        m = <span class="built_in">len</span>(obstacleGrid)</span><br><span class="line">        n = <span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果在位置(0, 0)，哪里都去不了，直接返回0</span></span><br><span class="line">        <span class="keyword">if</span> obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 否则，位置(0, 0)可以到达</span></span><br><span class="line">        obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化 0 列</span></span><br><span class="line">        <span class="keyword">for</span> clo <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">            obstacleGrid[clo][<span class="number">0</span>] = <span class="built_in">int</span>(obstacleGrid[clo][<span class="number">0</span>] == <span class="number">0</span> <span class="keyword">and</span> obstacleGrid[clo-<span class="number">1</span>][<span class="number">0</span>] == <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化 0 行</span></span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">            obstacleGrid[<span class="number">0</span>][row] = <span class="built_in">int</span>(obstacleGrid[<span class="number">0</span>][row] == <span class="number">0</span> <span class="keyword">and</span> obstacleGrid[<span class="number">0</span>][row-<span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从位置(1, 1)根据动态方程开始计算</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">                <span class="keyword">if</span> obstacleGrid[i][j] == <span class="number">0</span>:</span><br><span class="line">                    obstacleGrid[i][j] = obstacleGrid[i-<span class="number">1</span>][j] + obstacleGrid[i][j-<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    obstacleGrid[i][j] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> obstacleGrid[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>  这些都准备就绪之后，按照相关思路进行编码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">uniquePathsWithObstacles1</span>(<span class="params">self, obstacleGrid</span>):</span></span><br><span class="line">          <span class="comment"># 行列长度</span></span><br><span class="line">        m = <span class="built_in">len</span>(obstacleGrid)</span><br><span class="line">        n = <span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果在位置(0, 0)，哪里都去不了，直接返回0</span></span><br><span class="line">        <span class="keyword">if</span> obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 否则，位置(0, 0)可以到达</span></span><br><span class="line">        obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化 0 列</span></span><br><span class="line">        <span class="keyword">for</span> clo <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">            obstacleGrid[clo][<span class="number">0</span>] = <span class="built_in">int</span>(obstacleGrid[clo][<span class="number">0</span>] == <span class="number">0</span> <span class="keyword">and</span> obstacleGrid[clo-<span class="number">1</span>][<span class="number">0</span>] == <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化 0 行</span></span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">            obstacleGrid[<span class="number">0</span>][row] = <span class="built_in">int</span>(obstacleGrid[<span class="number">0</span>][row] == <span class="number">0</span> <span class="keyword">and</span> obstacleGrid[<span class="number">0</span>][row-<span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从位置(1, 1)根据动态方程开始计算</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">                <span class="keyword">if</span> obstacleGrid[i][j] == <span class="number">0</span>:</span><br><span class="line">                    obstacleGrid[i][j] = obstacleGrid[i-<span class="number">1</span>][j] + obstacleGrid[i][j-<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    obstacleGrid[i][j] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> obstacleGrid[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>时间复杂度: O(mxn)</p>
 <p>空间复杂度: O(1)</p>
@@ -604,8 +574,6 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line">输出: <span class="number">3</span></span><br><span class="line">解释: 你不能先偷窃 <span class="number">1</span> 号房屋（金额 = <span class="number">2</span>），然后偷窃 <span class="number">3</span> 号房屋（金额 = <span class="number">2</span>）, 因为他们是相邻的。</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2:</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出: <span class="number">4</span></span><br><span class="line">解释: 你可以先偷窃 <span class="number">1</span> 号房屋（金额 = <span class="number">1</span>），然后偷窃 <span class="number">3</span> 号房屋（金额 = <span class="number">3</span>）。</span><br><span class="line">     偷窃到的最高金额 = <span class="number">1</span> + <span class="number">3</span> = <span class="number">4</span> 。</span><br></pre></td></tr></table></figure>
-
-
 <p>与《打家劫舍I》不同的是，《打家劫舍I》的屋子是线性的，而《打家劫舍II》是环状的，所以要考虑的点会增加一些，因为首位相连接的情况，咱们分为下面三种情况进行设定：</p>
 <p>a. 不偷首偷尾</p>
 <p>b. 偷首不偷尾</p>
@@ -617,8 +585,7 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <h5 id="步骤二：找出关系元素间的动态方程-3"><a href="#步骤二：找出关系元素间的动态方程-3" class="headerlink" title="步骤二：找出关系元素间的动态方程"></a>步骤二：找出关系元素间的动态方程</h5><p>​    动态方程可参照《打家劫舍I》，有很详细的图解过程，该例子动态方程的变化和之前是完全一致的：</p>
 <p>​    <strong>dp[i] = max(dp[i-1], nums[i-1]+dp[i-2])</strong></p>
 <h5 id="步骤三：初始化设定"><a href="#步骤三：初始化设定" class="headerlink" title="步骤三：初始化设定"></a>步骤三：初始化设定</h5><p>​    初始化: 给没有房子时，dp一个位置，即：dp[0]<br>​        a. 当size=0时，没有房子，小偷没办法偷：dp[0]=0；<br>​        b. 当size=1时，有一间房子，只要偷即可：dp[1]=nums[0]</p>
-<img src="/images/20521cf21f76b9359a5c9dbbeda1063618.jpg" width="50%" height="50%">
-
+<p><img src="/images/20521cf21f76b9359a5c9dbbeda1063618.jpg" width="50%" height="50%"></p>
 <p>​    由于屋子首位相连接，所以在计算时候，直接分为两种情况。第一种略过第一个屋子，第二种略过第二个屋子，这样得到的两个数组结果。最后只要比较最后一位数值的大小就ok了。解决！</p>
 <p>该例子步骤三之后，感兴趣的同学可以自己写一下代码，和《打家劫舍I》的代码很类似，后面我写了优化后的代码，可能会更加的明白怎么写。咱们直接到步骤四，有了上面的案例，直接来看看优化后的方案:</p>
 <h5 id="步骤四：优化-3"><a href="#步骤四：优化-3" class="headerlink" title="步骤四：优化"></a>步骤四：优化</h5><p>​    同样从 dp[i] = max(dp[i-1], nums[i-1]+dp[i-2]) 关系来看，每一次动态变化，都与前两次状态有关系（dp[i-1], dp[i-2])，而前面的一些值是没有必要留存的，只要保存两个变量来保存过程最优值就好.</p>
@@ -642,7 +609,7 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <p>1.由于房屋是树状的，因此，我们可以使用遍历树的传统方法进行遍历(前序、中序、后续)<br>2.简单的思路是，从树低进行往上遍历，拿到最优的打劫值。可以选用后续遍历<br>3.得到每一节点的最优值，最后选取最优的结果</p>
 <p>依然按照三个步骤来进行分析（无优化点）</p>
 <h5 id="步骤一：-定义dp数组的含义-2"><a href="#步骤一：-定义dp数组的含义-2" class="headerlink" title="步骤一： 定义dp数组的含义"></a>步骤一： 定义dp数组的含义</h5><p>​    dp[i]代表该节点及以下打最多的劫（拿到最多的钱）</p>
-<h5 id="步骤二：找出关系元素间的动态方程-4"><a href="#步骤二：找出关系元素间的动态方程-4" class="headerlink" title="步骤二：找出关系元素间的动态方程"></a>步骤二：找出关系元素间的动态方程</h5><p>​    根据我们每走到一个节点，都会有两种情况，那就是 <strong>偷(1)</strong> 与 **不偷(0)**。我们分开来讨论：</p>
+<h5 id="步骤二：找出关系元素间的动态方程-4"><a href="#步骤二：找出关系元素间的动态方程-4" class="headerlink" title="步骤二：找出关系元素间的动态方程"></a>步骤二：找出关系元素间的动态方程</h5><p>​    根据我们每走到一个节点，都会有两种情况，那就是 <strong>偷(1)</strong> 与 <strong>不偷(0)</strong>。我们分开来讨论：</p>
 <p>​    a. 用 <strong>dp[0]</strong> 代表不偷取该节点到目前为止拿到最多的钱，那么儿子节点偷不偷都ok。</p>
 <p>​        所以： <strong>dp[0] = max(left[0], left[1]) + max(right[0], right[1])</strong></p>
 <p>​    b. 用 <strong>dp[1]</strong> 代表偷了该节点到目前为止拿到最多的钱，则儿子节点都不能被偷。</p>
@@ -656,10 +623,6 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 <h5 id="步骤三：初始化设定-1"><a href="#步骤三：初始化设定-1" class="headerlink" title="步骤三：初始化设定"></a>步骤三：初始化设定</h5><p>​    该例子的初始化比较简单，就是当前树的形状为空的时候，直接返回dp[0, 0]</p>
 <p>下面贴出完整代码，其中包含<strong>树的初始化</strong>代码 &amp;&amp; 一大堆的注释：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>():</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rob</span>(<span class="params">self, root</span>):</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 说明：</span></span><br><span class="line">        <span class="comment"># 1.由于房屋是树状的，因此，我们可以使用遍历树的传统方法进行遍历(前序、中序、后续)</span></span><br><span class="line">        <span class="comment"># 2.简单的思路是，从树低进行往上遍历，拿到最优的打劫值。可以选用后续遍历</span></span><br><span class="line">        <span class="comment"># 3.得到每一节点的最优值，最后选取最优的结果</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 1.dp[i]代表该节点及以下拿到的最多的钱</span></span><br><span class="line">        <span class="comment"># 2.动态方程：</span></span><br><span class="line">        <span class="comment">#   2.1 dp[0]代表不偷该节点拿到最多的钱，则儿子节点偷不偷都ok。dp[0] = max(left[0], left[1]) + max(right[0], right[1])</span></span><br><span class="line">        <span class="comment">#   2.2 dp[1]代表偷了该节点拿到最多的钱，则儿子节点都不能被偷。dp[1] = var + left[0] + right[0]</span></span><br><span class="line">        <span class="comment"># 3.初始化：当前树的形状为空的时候，直接返回dp[0, 0]</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">postTrasval</span>(<span class="params">root</span>):</span></span><br><span class="line">            dp = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">                <span class="keyword">return</span> dp</span><br><span class="line">            left = postTrasval(root.left)</span><br><span class="line">            right = postTrasval(root.right)</span><br><span class="line"></span><br><span class="line">            dp[<span class="number">0</span>] = <span class="built_in">max</span>(left[<span class="number">0</span>], left[<span class="number">1</span>]) + <span class="built_in">max</span>(right[<span class="number">0</span>], right[<span class="number">1</span>])</span><br><span class="line">            dp[<span class="number">1</span>] = root.val + left[<span class="number">0</span>] + right[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> dp</span><br><span class="line"></span><br><span class="line">        dp = postTrasval(root)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(dp[<span class="number">0</span>], dp[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># initial tree structure</span></span><br><span class="line">    T = TreeNode(<span class="number">3</span>)</span><br><span class="line">    T.left = TreeNode(<span class="number">2</span>)</span><br><span class="line">    T.right = TreeNode(<span class="number">3</span>)</span><br><span class="line">    T.left.right = TreeNode(<span class="number">3</span>)</span><br><span class="line">    T.right.right = TreeNode(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># The solution to the Question</span></span><br><span class="line">    s = Solution()</span><br><span class="line">    print(s.rob(T))</span><br></pre></td></tr></table></figure>
-
-
-
-
 <p>至此为止，想要讲解的全部完毕了</p>
 <p>洋洋洒洒过万字，自己都没想到写了这么多</p>
 <p>在强调一点吧，这些题目全部理解 外加 自己另外练习，一定能够cover<strong>关于动态规划80%以上的题目</strong>，基本上都是dp为一维数组，二维数组的题目，很少有很奇怪的题型出现。所以，本文将《打家劫舍》经典案例详细讲解了一次，还有不同路径的问题，也是很经典的题目，而经典题目一定很具有代表性。优化方向很多，本文也只介绍了关于空间方面的优化，因为这个是最最常见的。</p>
@@ -902,13 +865,13 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">711k</span>
+    <span title="站点总字数">697k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">10:46</span>
+    <span title="站点阅读时长">10:34</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -1018,6 +981,8 @@ b. 想要计算得到F(2)， 那么F(2) = F(0) + F(1)   -->  保存 F(2)
 
 
 
+
+  
 
   
 
