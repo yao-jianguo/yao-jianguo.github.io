@@ -609,6 +609,32 @@
       </categories>
   </entry>
   <entry>
+    <title>C经典88案例 | 统计一行字符串单词的个数，作为函数值返回</title>
+    <url>/posts/596c8a1b/</url>
+    <content><![CDATA[<blockquote>
+<p>C经典88案例打包下载地址<br>链接: <a href="https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw">https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw</a><br>密码: uji4</p>
+</blockquote>
+<h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
+<p>函数：fun()</p>
+<p>功能：统计一行字符串单词的个数，作为函数值返回</p>
+<p>一行字符串在主函数中输入，规定所有单词都是由小写字母组成，单词之间由若干空格隔开，一行的开始没有空格</p>
+</blockquote>
+<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2 思路"></a>2 思路</h2><p>逐个字符进行判断是否为空</p>
+<p><em>下面“空开处”指的是一个空格或者若干空格隔开单词的说法</em></p>
+<ol>
+<li>开头无空格，故需要判断结尾有没有空开出，如果有，直接计算空开出就是单词数，如果没有需要单词数加1</li>
+<li>上述1中的空开出需要做处理，由于单词间由若干空格隔开，故判断一个空格的前一个是否为空格，如果不是，数量加1；如果是，不做处理</li>
+</ol>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3 代码"></a>3 代码</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 3 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 4 </span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">函数：fun()</span></span><br><span class="line"><span class="comment">功能：统计一行字符串单词的个数，作为函数值返回</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">一行字符串在主函数中输入，规定所有单词都是由小写字母组成，单词之间由若干空格隔开，一行的开始没有空格</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>; 	<span class="comment">// 单词个数</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(*(s+i)!=<span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (*(s+i) == <span class="string">&#x27; &#x27;</span> &amp;&amp; *(s+i<span class="number">-1</span>) != <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">			cnt += <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (*(s+i<span class="number">-1</span>) != <span class="string">&#x27; &#x27;</span>)&#123;	<span class="comment">// 如果单词结尾没有空格，则单词数需要空开数+1</span></span><br><span class="line">		<span class="keyword">return</span> cnt + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[] = <span class="string">&quot;hello world      i am c language&quot;</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;字符串内容：%s\n&quot;</span>, s);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;单词个数为：%d\n&quot;</span>, fun(s));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gcc ex003.c -o demo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">字符串内容：hello world      i am c language</span><br><span class="line">单词个数为：6</span><br></pre></td></tr></table></figure>
+<h2 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h2><p>在这里给大家准备了几百本的互联网技术类书籍，需要的来下载吧！<a href="https://mp.weixin.qq.com/s/KAYLiHFc5HTPiFD74JYeKQ">点击获取</a><br>有任何问题，欢迎随时交流!!!</p>
+]]></content>
+      <categories>
+        <category>C经典88案例</category>
+      </categories>
+  </entry>
+  <entry>
     <title>布隆过滤器(BloomFilter)原理 | 亿级数据过滤解决方案</title>
     <url>/posts/ba26fe62/</url>
     <content><![CDATA[<p>读前福利：几百本互联网技术书籍送给大家<a href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw</a></p>
