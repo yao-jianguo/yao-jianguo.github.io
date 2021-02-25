@@ -703,7 +703,8 @@ k=ln2 \times \frac {m}{n} = 0.7 \times \frac {m}{n} = 14</script><p>即：需要
 <p>在信息写入的时候，会同时写入到缓存、数据库和布隆过滤器。需要查询的时候，先进行对缓存进行查询，如果找不到的话，就会先使用 BloomFilter 进行判断是否存在，如果存在就会继续向数据库查询；如果不存在，就直接返回空了。</p>
 <p>这样在很大程度上提升了应用服务的效率！</p>
 <p><img src="/images/7082216a05225e2828d568baab4754a38.jpg" width="80%" height="80%"></p>
-<h4 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h4><p>几百本互联网技术书籍送给大家<br><a href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw</a></p>
+<hr>
+<h4 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h4><p>最后，这里为大家准备了几百本的互联网电子书，有需要的过来取吧。<a href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">点击获取</a></p>
 ]]></content>
       <categories>
         <category>数据结构和算法</category>
