@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+<meta name="360-site-verification" content="c18957643638bc25bd0a63c24cc00c32" />
+<meta name="sogou_site_verification" content="O32MpBFYmd"/>
+<meta name="bytedance-verification-code" content="HoDKSuHZKjSOgA/LtyDi" />
+<meta name="google-site-verification" content="DrH7ugrBSgIOHx1mYn_jgThI0EPHF7kB2pRxkfoTbec" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kekedetecclub_icon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.keketec.club","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="baidu-site-verification" content="code-l9uRmrXQRg" />
+
+
+
+
+
+
+
+
+
+  <meta name="description" content="SQL查询的艺术PDF下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL查询的艺术 PDF">
+<meta property="og:url" content="https://www.keketec.club/posts/901a8eb6/index.html">
+<meta property="og:site_name" content="可可の技术俱乐部">
+<meta property="og:description" content="SQL查询的艺术PDF下载">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.keketec.club/images/42824279d13e2a0f66b3bed33ab8e0551.jpg">
+<meta property="article:published_time" content="2021-02-09T21:45:17.000Z">
+<meta property="article:modified_time" content="2021-02-10T01:27:45.037Z">
+<meta property="article:author" content="Johngo">
+<meta property="article:tag" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.keketec.club/images/42824279d13e2a0f66b3bed33ab8e0551.jpg">
+
+<link rel="canonical" href="https://www.keketec.club/posts/901a8eb6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SQL查询的艺术 PDF | 可可の技术俱乐部</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0c5a95f460eb137dd49e2e64ed9c0b49";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">可可の技术俱乐部</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.keketec.club/posts/901a8eb6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="大数据,数据工程,算法,资源分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SQL查询的艺术 PDF
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-10 05:45:17 / 修改时间：09:27:45" itemprop="dateCreated datePublished" datetime="2021-02-10T05:45:17+08:00">2021-02-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">资源分享</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/901a8eb6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/901a8eb6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+            <div class="post-description">SQL查询的艺术PDF下载</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="《SQL查询的艺术》"><a href="#《SQL查询的艺术》" class="headerlink" title="《SQL查询的艺术》"></a>《SQL查询的艺术》</h4><h6 id="链接-https-pan-baidu-com-s-12qSyjdsLNPB5nRkqg7kH2Q-提取码-khvi"><a href="#链接-https-pan-baidu-com-s-12qSyjdsLNPB5nRkqg7kH2Q-提取码-khvi" class="headerlink" title="链接: https://pan.baidu.com/s/12qSyjdsLNPB5nRkqg7kH2Q 提取码: khvi"></a>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/12qSyjdsLNPB5nRkqg7kH2Q">https://pan.baidu.com/s/12qSyjdsLNPB5nRkqg7kH2Q</a> 提取码: khvi</h6><p>SQL是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统。SQL是数据库领域的一种标准语言。任何需要从事数据库相关工作的程序员，都必须学习和掌握SQL。<br><a id="more"></a></p>
+<p>　　《SQL查询的艺术》全面地介绍了数据库的基础知识和SQL查询的技巧，通过丰富的实例，帮助读者掌握常见的SQL应用。全书共分19章，按照数据定义、数据查询、数据操纵、数据控制、事务控制和程序化SQL的顺序，详细地讲解SQL编程的基础知识。全书共包括大小实例300多个，突出了实例教学、学用结合的特点。</p>
+<p>　　《SQL查询的艺术》适用于学习SQL编程的读者阅读，尤其适用于SQL初学者阅读；本书对数据库架构师、数据库管理员也有一定的参考价值。</p>
+<p><img src="/images/42824279d13e2a0f66b3bed33ab8e0551.jpg" width="50%" height="50%"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br><span class="line">694</span><br><span class="line">695</span><br><span class="line">696</span><br><span class="line">697</span><br><span class="line">698</span><br><span class="line">699</span><br><span class="line">700</span><br><span class="line">701</span><br><span class="line">702</span><br><span class="line">703</span><br><span class="line">704</span><br><span class="line">705</span><br><span class="line">706</span><br><span class="line">707</span><br><span class="line">708</span><br><span class="line">709</span><br><span class="line">710</span><br><span class="line">711</span><br><span class="line">712</span><br><span class="line">713</span><br><span class="line">714</span><br><span class="line">715</span><br><span class="line">716</span><br><span class="line">717</span><br><span class="line">718</span><br><span class="line">719</span><br><span class="line">720</span><br><span class="line">721</span><br><span class="line">722</span><br><span class="line">723</span><br><span class="line">724</span><br><span class="line">725</span><br><span class="line">726</span><br><span class="line">727</span><br><span class="line">728</span><br><span class="line">729</span><br><span class="line">730</span><br><span class="line">731</span><br><span class="line">732</span><br><span class="line">733</span><br><span class="line">734</span><br><span class="line">735</span><br><span class="line">736</span><br><span class="line">737</span><br><span class="line">738</span><br><span class="line">739</span><br><span class="line">740</span><br><span class="line">741</span><br><span class="line">742</span><br><span class="line">743</span><br><span class="line">744</span><br><span class="line">745</span><br><span class="line">746</span><br><span class="line">747</span><br><span class="line">748</span><br><span class="line">749</span><br><span class="line">750</span><br><span class="line">751</span><br><span class="line">752</span><br><span class="line">753</span><br><span class="line">754</span><br><span class="line">755</span><br><span class="line">756</span><br><span class="line">757</span><br><span class="line">758</span><br><span class="line">759</span><br><span class="line">760</span><br><span class="line">761</span><br><span class="line">762</span><br><span class="line">763</span><br><span class="line">764</span><br><span class="line">765</span><br><span class="line">766</span><br><span class="line">767</span><br><span class="line">768</span><br><span class="line">769</span><br><span class="line">770</span><br><span class="line">771</span><br><span class="line">772</span><br><span class="line">773</span><br><span class="line">774</span><br><span class="line">775</span><br><span class="line">776</span><br><span class="line">777</span><br><span class="line">778</span><br><span class="line">779</span><br><span class="line">780</span><br><span class="line">781</span><br><span class="line">782</span><br><span class="line">783</span><br><span class="line">784</span><br><span class="line">785</span><br><span class="line">786</span><br><span class="line">787</span><br><span class="line">788</span><br><span class="line">789</span><br><span class="line">790</span><br><span class="line">791</span><br><span class="line">792</span><br><span class="line">793</span><br><span class="line">794</span><br><span class="line">795</span><br><span class="line">796</span><br><span class="line">797</span><br><span class="line">798</span><br><span class="line">799</span><br><span class="line">800</span><br><span class="line">801</span><br><span class="line">802</span><br><span class="line">803</span><br><span class="line">804</span><br><span class="line">805</span><br><span class="line">806</span><br><span class="line">807</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">目录</span><br><span class="line"></span><br><span class="line">第1章　数据库与SQL基础</span><br><span class="line"></span><br><span class="line">1.1　数据库的基本概念</span><br><span class="line"></span><br><span class="line">1.1.1　数据库的由来</span><br><span class="line"></span><br><span class="line">1.1.2　数据库系统的概念</span><br><span class="line"></span><br><span class="line">1.2　数据库系统的结构、组成及工作流程</span><br><span class="line"></span><br><span class="line">1.2.1　数据库的体系结构</span><br><span class="line"></span><br><span class="line">1.2.2　数据库系统的组成</span><br><span class="line"></span><br><span class="line">1.2.3　数据库的工作流程</span><br><span class="line"></span><br><span class="line">1.3　关系数据库</span><br><span class="line"></span><br><span class="line">1.3.1　关系模型</span><br><span class="line"></span><br><span class="line">1.3.2　Codd十二法则</span><br><span class="line"></span><br><span class="line">1.3.3　范式</span><br><span class="line"></span><br><span class="line">1.4　SQL语言基础</span><br><span class="line"></span><br><span class="line">1.4.1　SQL的历史</span><br><span class="line"></span><br><span class="line">1.4.2　SQL语言的组成</span><br><span class="line"></span><br><span class="line">1.4.3　SQL语句的结构</span><br><span class="line"></span><br><span class="line">1.4.4　SQL的优点</span><br><span class="line"></span><br><span class="line">1.4.5　SQL的执行</span><br><span class="line"></span><br><span class="line">1.5　SQL环境</span><br><span class="line"></span><br><span class="line">1.5.1　环境</span><br><span class="line"></span><br><span class="line">1.5.2　SQL的层次结构</span><br><span class="line"></span><br><span class="line">1.5.3　客户程序和服务程序系统</span><br><span class="line"></span><br><span class="line">1.5.4　SQL环境中对象的命名规则</span><br><span class="line"></span><br><span class="line">第2章　主要的关系数据库与SQL</span><br><span class="line"></span><br><span class="line">2.1　SQL Server</span><br><span class="line"></span><br><span class="line">2.1.1　SQL Server的结构</span><br><span class="line"></span><br><span class="line">2.1.2　数据库访问标准化接口--ODBC</span><br><span class="line"></span><br><span class="line">2.1.3　使用查询分析器执行SQL语句</span><br><span class="line"></span><br><span class="line">2.2　Transact-SQL</span><br><span class="line"></span><br><span class="line">2.2.1　Transact-SQL概述</span><br><span class="line"></span><br><span class="line">2.2.2　Transact-SQL的主要组成</span><br><span class="line"></span><br><span class="line">2.2.3　Transact-SQL的一些重要命令</span><br><span class="line"></span><br><span class="line">第3章　创建、修改和删除表</span><br><span class="line"></span><br><span class="line">3.1　表的基础知识</span><br><span class="line"></span><br><span class="line">3.1.1　表的基本结构</span><br><span class="line"></span><br><span class="line">3.1.2　表的种类</span><br><span class="line"></span><br><span class="line">3.2　SQL数据类型</span><br><span class="line"></span><br><span class="line">3.2.1　字符型数据</span><br><span class="line"></span><br><span class="line">3.2.2　数字型数据</span><br><span class="line"></span><br><span class="line">3.2.3　日期数据类型</span><br><span class="line"></span><br><span class="line">3.2.4　二进制数据类型</span><br><span class="line"></span><br><span class="line">3.2.5　文本和图形数据类型</span><br><span class="line"></span><br><span class="line">3.2.6　自定义数据类型</span><br><span class="line"></span><br><span class="line">3.3　表的创建（CREATE）</span><br><span class="line"></span><br><span class="line">3.3.1　创建基本表</span><br><span class="line"></span><br><span class="line">3.3.2　非空约束</span><br><span class="line"></span><br><span class="line">3.3.3　DEFAULT指定缺省值</span><br><span class="line"></span><br><span class="line">3.4　表的修改</span><br><span class="line"></span><br><span class="line">3.4.1　增加新列</span><br><span class="line"></span><br><span class="line">3.4.2　删除列</span><br><span class="line"></span><br><span class="line">3.4.3　修改列</span><br><span class="line"></span><br><span class="line">3.5　表的删除与重命名</span><br><span class="line"></span><br><span class="line">3.5.1　重命名表</span><br><span class="line"></span><br><span class="line">3.5.2　删除表</span><br><span class="line"></span><br><span class="line">3.6　创建、删除数据库</span><br><span class="line"></span><br><span class="line">3.6.1　数据库的创建</span><br><span class="line"></span><br><span class="line">3.6.2　SQL Server中数据库的创建</span><br><span class="line"></span><br><span class="line">3.6.3　删除数据库</span><br><span class="line"></span><br><span class="line">第4章　索引与视图的创建</span><br><span class="line"></span><br><span class="line">4.1　索引的基础知识</span><br><span class="line"></span><br><span class="line">4.1.1　索引的概念</span><br><span class="line"></span><br><span class="line">4.1.2　索引的结构</span><br><span class="line"></span><br><span class="line">4.2　索引的创建与销毁　61</span><br><span class="line"></span><br><span class="line">4.2.1　基本创建语法</span><br><span class="line"></span><br><span class="line">4.2.2　本章实例用到的实例表</span><br><span class="line"></span><br><span class="line">4.2.3　创建简单的非簇索引</span><br><span class="line"></span><br><span class="line">4.2.4　多字段非簇索引的创建</span><br><span class="line"></span><br><span class="line">4.2.5　使用UNIQUE关键字创建惟一索引</span><br><span class="line"></span><br><span class="line">4.2.6　使用CLUSTERDE关键字创建簇索引</span><br><span class="line"></span><br><span class="line">4.2.7　索引的销毁</span><br><span class="line"></span><br><span class="line">4.2.8　使用索引的几点原则</span><br><span class="line"></span><br><span class="line">4.3　视图的基础知识</span><br><span class="line"></span><br><span class="line">4.3.1　视图简介</span><br><span class="line"></span><br><span class="line">4.3.2　视图的优缺点</span><br><span class="line"></span><br><span class="line">4.4　视图的创建与销毁</span><br><span class="line"></span><br><span class="line">4.4.1　基本创建语法</span><br><span class="line"></span><br><span class="line">4.4.2　创建简单的视图</span><br><span class="line"></span><br><span class="line">4.4.3　利用视图简化表的复杂连接</span><br><span class="line"></span><br><span class="line">4.4.4　利用视图简化复杂查询</span><br><span class="line"></span><br><span class="line">4.4.5　视图的销毁</span><br><span class="line"></span><br><span class="line">4.4.6　使用视图的几点原则</span><br><span class="line"></span><br><span class="line">第5章　简单的查询</span><br><span class="line"></span><br><span class="line">5.1　查询的基本结构</span><br><span class="line"></span><br><span class="line">5.1.1　SELECT语句的结构</span><br><span class="line"></span><br><span class="line">5.1.2　SELECT语句的执行步骤</span><br><span class="line"></span><br><span class="line">5.2　列的查询</span><br><span class="line"></span><br><span class="line">5.2.1　本章用到的实例表</span><br><span class="line"></span><br><span class="line">5.2.2　单列查询</span><br><span class="line"></span><br><span class="line">5.2.3　使用DISTINCT去除重复信息</span><br><span class="line"></span><br><span class="line">5.2.4　多列查询</span><br><span class="line"></span><br><span class="line">5.2.5　查询所有的列</span><br><span class="line"></span><br><span class="line">5.3　排序查询结果</span><br><span class="line"></span><br><span class="line">5.3.1　单列排序</span><br><span class="line"></span><br><span class="line">5.3.2　多列排序</span><br><span class="line"></span><br><span class="line">5.3.3　采用序号进行多列排序</span><br><span class="line"></span><br><span class="line">5.3.4　反向排序</span><br><span class="line"></span><br><span class="line">5.4　使用WHERE子句定义搜索条件查询</span><br><span class="line"></span><br><span class="line">5.4.1　WHERE子句单条件查询</span><br><span class="line"></span><br><span class="line">5.4.2　单值比较运算符</span><br><span class="line"></span><br><span class="line">5.4.3　BETWEEN运算符范围筛选</span><br><span class="line"></span><br><span class="line">5.4.4　NULL值的判断</span><br><span class="line"></span><br><span class="line">第6章　复杂搜索条件查询</span><br><span class="line"></span><br><span class="line">6.1　本章用到的实例表</span><br><span class="line"></span><br><span class="line">6.2　组合查询条件</span><br><span class="line"></span><br><span class="line">6.2.1　AND运算符</span><br><span class="line"></span><br><span class="line">6.2.2　OR运算符</span><br><span class="line"></span><br><span class="line">6.2.3　AND、OR运算符的组合使用</span><br><span class="line"></span><br><span class="line">6.3　IN运算符</span><br><span class="line"></span><br><span class="line">6.3.1　IN运算符的使用方法</span><br><span class="line"></span><br><span class="line">6.3.2　IN运算符与OR运算符</span><br><span class="line"></span><br><span class="line">6.4　NOT运算符</span><br><span class="line"></span><br><span class="line">6.4.1　使用NOT运算符</span><br><span class="line"></span><br><span class="line">6.4.2　NOT运算符与&lt;&gt;运算符</span><br><span class="line"></span><br><span class="line">6.5　使用LIKE进行模糊查询</span><br><span class="line"></span><br><span class="line">6.5.1　LIKE运算符</span><br><span class="line"></span><br><span class="line">6.5.2 &quot;%&quot;通配符</span><br><span class="line"></span><br><span class="line">6.5.3　&quot;_&quot;通配符</span><br><span class="line"></span><br><span class="line">6.5.4　&quot;[]&quot;通配符</span><br><span class="line"></span><br><span class="line">6.5.5　使用ESCAPE定义转义符</span><br><span class="line"></span><br><span class="line">第7章　连接符、数值运算与函数</span><br><span class="line"></span><br><span class="line">7.1　本章实例用到的表</span><br><span class="line"></span><br><span class="line">7.2　连接符</span><br><span class="line"></span><br><span class="line">7.2.1　连接符的应用</span><br><span class="line"></span><br><span class="line">7.2.2　使用别名</span><br><span class="line"></span><br><span class="line">7.3　数值运算</span><br><span class="line"></span><br><span class="line">7.3.1　数学运算符的种类</span><br><span class="line"></span><br><span class="line">7.3.2　数学运算符的运用</span><br><span class="line"></span><br><span class="line">7.3.3　使用CAST表达式转换数据类型</span><br><span class="line"></span><br><span class="line">7.3.4　使用CASE表达式</span><br><span class="line"></span><br><span class="line">7.4　函数</span><br><span class="line"></span><br><span class="line">7.4.1　有关函数的说明</span><br><span class="line"></span><br><span class="line">7.4.2　字符处理函数</span><br><span class="line"></span><br><span class="line">7.4.3　算术运算函数</span><br><span class="line"></span><br><span class="line">7.4.4　日期时间函数</span><br><span class="line"></span><br><span class="line">7.4.5　CONVERT（）函数转换日期、时间</span><br><span class="line"></span><br><span class="line">第8章　聚合分析与分组</span><br><span class="line"></span><br><span class="line">8.1　聚合分析的基本概念</span><br><span class="line"></span><br><span class="line">8.1.1　聚合分析</span><br><span class="line"></span><br><span class="line">8.1.2　聚合函数</span><br><span class="line"></span><br><span class="line">8.2　聚合函数的应用</span><br><span class="line"></span><br><span class="line">8.2.1　求和函数--SUM（）</span><br><span class="line"></span><br><span class="line">8.2.2　计数函数--COUNT（）</span><br><span class="line"></span><br><span class="line">8.2.3　最大&#x2F;最小值函数--MAX（）&#x2F;MIN（）</span><br><span class="line"></span><br><span class="line">8.2.4　均值函数--AVG（）</span><br><span class="line"></span><br><span class="line">8.2.5　聚合分析的重值处理</span><br><span class="line"></span><br><span class="line">8.2.6　聚合函数的组合使用</span><br><span class="line"></span><br><span class="line">8.3　组合查询</span><br><span class="line"></span><br><span class="line">8.3.1　GROUP BY子句创建分组</span><br><span class="line"></span><br><span class="line">8.3.2　GROUP BY子句根据多列组合行</span><br><span class="line"></span><br><span class="line">8.3.3　ROLLUP运算符和CUBE运算符</span><br><span class="line"></span><br><span class="line">8.3.4　GROUP BY子句中的NULL值处理</span><br><span class="line"></span><br><span class="line">8.3.5　HAVING子句</span><br><span class="line"></span><br><span class="line">8.3.6　HAVING子句与WHERE子句</span><br><span class="line"></span><br><span class="line">8.3.7　SELECT语句各查询子句总结</span><br><span class="line"></span><br><span class="line">第9章　多表查询</span><br><span class="line"></span><br><span class="line">9.1　本章用到的实例表</span><br><span class="line"></span><br><span class="line">9.2　表的基本连接</span><br><span class="line"></span><br><span class="line">9.2.1　连接表的目的</span><br><span class="line"></span><br><span class="line">9.2.2　简单的二表连接</span><br><span class="line"></span><br><span class="line">9.2.3　多表连接</span><br><span class="line"></span><br><span class="line">9.2.4　使用表别名</span><br><span class="line"></span><br><span class="line">9.2.5　采用JOIN关键字建立连接</span><br><span class="line"></span><br><span class="line">9.3　表的连接类型</span><br><span class="line"></span><br><span class="line">9.3.1　自连接</span><br><span class="line"></span><br><span class="line">9.3.2　自然连接（NATURAL JOIN）</span><br><span class="line"></span><br><span class="line">9.3.3　内连接（INNER JOIN）</span><br><span class="line"></span><br><span class="line">9.3.4　外连接（OUTER JOIN）</span><br><span class="line"></span><br><span class="line">9.3.5　交叉连接（CROSS JOIN）</span><br><span class="line"></span><br><span class="line">9.4　UNION与UNION JOIN</span><br><span class="line"></span><br><span class="line">9.4.1　关系的集合运算</span><br><span class="line"></span><br><span class="line">9.4.2　UNION运算符</span><br><span class="line"></span><br><span class="line">9.4.3　ORDER BY子句排序UNION运算结果</span><br><span class="line"></span><br><span class="line">9.4.4　对多表进行UNION运算</span><br><span class="line"></span><br><span class="line">9.4.5　UNION JOIN 连接表</span><br><span class="line"></span><br><span class="line">9.5　表连接的其他应用及注意问题</span><br><span class="line"></span><br><span class="line">9.5.1　连接表进行聚合运算</span><br><span class="line"></span><br><span class="line">9.5.2　多表连接的综合运用</span><br><span class="line"></span><br><span class="line">9.5.3　多表连接注意事项</span><br><span class="line"></span><br><span class="line">第10章　子查询</span><br><span class="line"></span><br><span class="line">10.1　创建和使用返回单值的子查询</span><br><span class="line"></span><br><span class="line">10.1.1　在多表查询中使用子查询</span><br><span class="line"></span><br><span class="line">10.1.2　在子查询中使用聚合函数</span><br><span class="line"></span><br><span class="line">10.2　创建和使用返回多行的子查询</span><br><span class="line"></span><br><span class="line">10.2.1　IN子查询</span><br><span class="line"></span><br><span class="line">10.2.2　IN子查询实现集合交和集合差运算</span><br><span class="line"></span><br><span class="line">10.2.3　EXISTS子查询</span><br><span class="line"></span><br><span class="line">10.2.4　EXISTS子查询实现两表交集</span><br><span class="line"></span><br><span class="line">10.2.5　SOME&#x2F;ALL子查询</span><br><span class="line"></span><br><span class="line">10.2.6　UNIQUE子查询</span><br><span class="line"></span><br><span class="line">10.3　相关子查询</span><br><span class="line"></span><br><span class="line">10.3.1　使用IN引入相关子查询</span><br><span class="line"></span><br><span class="line">10.3.2　比较运算符引入相关子查询</span><br><span class="line"></span><br><span class="line">10.3.3　在HAVING子句中使用相关子查询</span><br><span class="line"></span><br><span class="line">10.4　嵌套子查询</span><br><span class="line"></span><br><span class="line">10.5　使用子查询创建视图</span><br><span class="line"></span><br><span class="line">10.6　树查询</span><br><span class="line"></span><br><span class="line">第11章　数据插入操作</span><br><span class="line"></span><br><span class="line">11.1　插入单行记录</span><br><span class="line"></span><br><span class="line">11.1.1　基本语法</span><br><span class="line"></span><br><span class="line">11.1.2　整行插入</span><br><span class="line"></span><br><span class="line">11.1.3　NULL值的插入</span><br><span class="line"></span><br><span class="line">11.1.4　唯一值的插入</span><br><span class="line"></span><br><span class="line">11.1.5　特定字段数据插入</span><br><span class="line"></span><br><span class="line">11.1.6　通过视图插入行</span><br><span class="line"></span><br><span class="line">11.2　插入多行记录</span><br><span class="line"></span><br><span class="line">11.2.1　由VALUES关键字引入多行数据插入</span><br><span class="line"></span><br><span class="line">11.2.2　使用SELECT语句插入值</span><br><span class="line"></span><br><span class="line">11.3　表中数据的复制</span><br><span class="line"></span><br><span class="line">11.3.1　基本语法</span><br><span class="line"></span><br><span class="line">11.3.2　应用实例</span><br><span class="line"></span><br><span class="line">11.4　从外部数据源导入、导出数据</span><br><span class="line"></span><br><span class="line">11.4.1　Access数据库数据的导出</span><br><span class="line"></span><br><span class="line">11.4.2　Access数据库数据的导入</span><br><span class="line"></span><br><span class="line">11.4.3　SQL Server数据库数据导出</span><br><span class="line"></span><br><span class="line">11.4.4　SQL Server数据库数据导入</span><br><span class="line"></span><br><span class="line">第12章　数据的更新和删除</span><br><span class="line"></span><br><span class="line">12.1　更新表中的数据</span><br><span class="line"></span><br><span class="line">12.1.1　UPDATE语句的基本语法</span><br><span class="line"></span><br><span class="line">12.1.2　UPDATE语句更新列值</span><br><span class="line"></span><br><span class="line">12.1.3　利用子查询更新多行的值</span><br><span class="line"></span><br><span class="line">12.1.4　依据外表值更新数据</span><br><span class="line"></span><br><span class="line">12.1.5　分步更新表</span><br><span class="line"></span><br><span class="line">12.2　删除表中的数据</span><br><span class="line"></span><br><span class="line">12.2.1　DELETE语句基本语法</span><br><span class="line"></span><br><span class="line">12.2.2　DELETE语句删除单行数据</span><br><span class="line"></span><br><span class="line">12.2.3　DELETE语句删除多行数据</span><br><span class="line"></span><br><span class="line">12.2.4　DELETE语句删除所有行</span><br><span class="line"></span><br><span class="line">12.2.5　TRUNCATE TABLE语句</span><br><span class="line"></span><br><span class="line">12.3　通过视图更新表</span><br><span class="line"></span><br><span class="line">12.3.1　可更新视图的约束</span><br><span class="line"></span><br><span class="line">12.3.2　通过视图更新表数据</span><br><span class="line"></span><br><span class="line">12.3.3　通过视图删除表数据</span><br><span class="line"></span><br><span class="line">第13章　安全性控制</span><br><span class="line"></span><br><span class="line">13.1　SQL安全模式</span><br><span class="line"></span><br><span class="line">13.1.1　授权ID</span><br><span class="line"></span><br><span class="line">13.1.2　SQL的安全对象和权限</span><br><span class="line"></span><br><span class="line">13.1.3　授权图</span><br><span class="line"></span><br><span class="line">13.2　角色管理</span><br><span class="line"></span><br><span class="line">13.2.1　CREATE语句创建角色</span><br><span class="line"></span><br><span class="line">13.2.2　DROP语句删除角色</span><br><span class="line"></span><br><span class="line">13.2.3　GRANT语句授予角色</span><br><span class="line"></span><br><span class="line">13.2.4　REVOKE语句取消角色</span><br><span class="line"></span><br><span class="line">13.3　权限管理</span><br><span class="line"></span><br><span class="line">13.3.1　GRANT语句授予权限</span><br><span class="line"></span><br><span class="line">13.3.2　REVOKE语句取消权限</span><br><span class="line"></span><br><span class="line">13.3.3　SELECT权限控制</span><br><span class="line"></span><br><span class="line">13.3.4　INSERT权限控制</span><br><span class="line"></span><br><span class="line">13.3.5　UPDATE权限控制</span><br><span class="line"></span><br><span class="line">13.3.6　DELETE权限控制</span><br><span class="line"></span><br><span class="line">13.4　SQL Server安全管理</span><br><span class="line"></span><br><span class="line">13.4.1　SQL Server登录认证</span><br><span class="line"></span><br><span class="line">13.4.2　SQL Server用户ID的管理</span><br><span class="line"></span><br><span class="line">13.4.3　SQL Server权限管理</span><br><span class="line"></span><br><span class="line">13.4.4　SQL Server角色管理</span><br><span class="line"></span><br><span class="line">13.5　Oracle安全管理</span><br><span class="line"></span><br><span class="line">13.5.1　Oracle中用户、资源、概要文件、模式的概念</span><br><span class="line"></span><br><span class="line">13.5.2　Oracle中的用户管理</span><br><span class="line"></span><br><span class="line">13.5.3　Oracle中的资源管理</span><br><span class="line"></span><br><span class="line">13.5.4　Oracle中的权限管理</span><br><span class="line"></span><br><span class="line">13.5.5　Oracle中的角色管理</span><br><span class="line"></span><br><span class="line">第14章　完整性控制</span><br><span class="line"></span><br><span class="line">14.1　完整性约束简介</span><br><span class="line"></span><br><span class="line">14.1.1　数据的完整性</span><br><span class="line"></span><br><span class="line">14.1.2　完整性约束的类型</span><br><span class="line"></span><br><span class="line">14.2　与表有关的约束</span><br><span class="line"></span><br><span class="line">14.2.1　列约束与表约束的创建</span><br><span class="line"></span><br><span class="line">14.2.2　NOT NULL（非空）约束</span><br><span class="line"></span><br><span class="line">14.2.3　UNIQUE（惟一）约束</span><br><span class="line"></span><br><span class="line">14.2.4　PRIMARY KEY（主键）约束</span><br><span class="line"></span><br><span class="line">14.2.5　FOREIGN KEY（外键）约束</span><br><span class="line"></span><br><span class="line">14.2.6　CHECK（校验）约束</span><br><span class="line"></span><br><span class="line">14.3　深入探讨外键与完整性检查</span><br><span class="line"></span><br><span class="line">14.3.1　引用完整性检查</span><br><span class="line"></span><br><span class="line">14.3.2　MATCH子句</span><br><span class="line"></span><br><span class="line">14.3.3　更新、删除操作规则</span><br><span class="line"></span><br><span class="line">14.4　域约束与断言</span><br><span class="line"></span><br><span class="line">14.4.1　域与域约束</span><br><span class="line"></span><br><span class="line">14.4.2　利用断言创建多表约束</span><br><span class="line"></span><br><span class="line">14.5　SQL Server中的完整性控制</span><br><span class="line"></span><br><span class="line">14.5.1　创建规则（Rule）</span><br><span class="line"></span><br><span class="line">14.5.2　规则的绑定与松绑</span><br><span class="line"></span><br><span class="line">14.5.3　创建缺省值（Default）</span><br><span class="line"></span><br><span class="line">14.5.4　缺省值的绑定与松绑</span><br><span class="line"></span><br><span class="line">第15章　存储过程与函数</span><br><span class="line"></span><br><span class="line">15.1　SQL中的存储过程与函数</span><br><span class="line"></span><br><span class="line">15.2　SQL Server 中的流控制语句</span><br><span class="line"></span><br><span class="line">15.2.1　BEGIN…END语句</span><br><span class="line"></span><br><span class="line">15.2.2　IF…ELSE语句</span><br><span class="line"></span><br><span class="line">15.2.3　WHILE、BREAK和CONTINUE语句</span><br><span class="line"></span><br><span class="line">15.2.4　DECLARE语句</span><br><span class="line"></span><br><span class="line">15.2.5　GOTO label语句</span><br><span class="line"></span><br><span class="line">15.2.6　RETURN语句</span><br><span class="line"></span><br><span class="line">15.2.7　WAITFOR语句</span><br><span class="line"></span><br><span class="line">15.2.8　PRINT语句</span><br><span class="line"></span><br><span class="line">15.2.9　注释</span><br><span class="line"></span><br><span class="line">15.3　SQL Server中的存储过程和函数</span><br><span class="line"></span><br><span class="line">15.3.1　系统存储过程</span><br><span class="line"></span><br><span class="line">15.3.2　使用CREATE PROCEDURE创建存储过程</span><br><span class="line"></span><br><span class="line">15.3.3　使用EXECUTE语句调用存储过程</span><br><span class="line"></span><br><span class="line">15.3.4　使用CREATE FUNCTION创建函数</span><br><span class="line"></span><br><span class="line">15.3.5　使用Enterprise Manager（企业管理器）创建存储过程和函数</span><br><span class="line"></span><br><span class="line">15.3.6　修改和删除存储过程和函数</span><br><span class="line"></span><br><span class="line">15.4　Oracle中的流控制语句</span><br><span class="line"></span><br><span class="line">15.4.1　条件语句</span><br><span class="line"></span><br><span class="line">15.4.2　循环语句</span><br><span class="line"></span><br><span class="line">15.4.3　标号和GOTO</span><br><span class="line"></span><br><span class="line">15.5　Oracle数据库中的存储过程</span><br><span class="line"></span><br><span class="line">15.5.1　存储过程的创建与调用</span><br><span class="line"></span><br><span class="line">15.5.2　Oracle中存储过程和函数的管理</span><br><span class="line"></span><br><span class="line">第16章　SQL触发器</span><br><span class="line"></span><br><span class="line">16.1　触发器的基本概念</span><br><span class="line"></span><br><span class="line">16.1.1　触发器简介</span><br><span class="line"></span><br><span class="line">16.1.2　触发器执行环境</span><br><span class="line"></span><br><span class="line">16.2　SQL Server中的触发器</span><br><span class="line"></span><br><span class="line">16.2.1　SQL Server触发器的种类</span><br><span class="line"></span><br><span class="line">16.2.2　使用CREATE TRIGGER命令创建触发器</span><br><span class="line"></span><br><span class="line">16.2.3　INSERT触发器</span><br><span class="line"></span><br><span class="line">16.2.4　DELETE触发器</span><br><span class="line"></span><br><span class="line">16.2.5　UPDATE触发器</span><br><span class="line"></span><br><span class="line">16.2.6　INSTEAD OF触发器</span><br><span class="line"></span><br><span class="line">16.2.7　嵌套触发器</span><br><span class="line"></span><br><span class="line">16.2.8　递归触发器</span><br><span class="line"></span><br><span class="line">16.2.9　SQL Server中触发器的管理</span><br><span class="line"></span><br><span class="line">16.3　Oracle数据库中触发器的操作</span><br><span class="line"></span><br><span class="line">16.3.1　Oracle触发器类型</span><br><span class="line"></span><br><span class="line">16.3.2　触发器的创建</span><br><span class="line"></span><br><span class="line">16.3.3　创建系统触发器</span><br><span class="line"></span><br><span class="line">16.3.4　触发器的触发次序和触发谓词的使用</span><br><span class="line"></span><br><span class="line">16.3.5　Oracle触发器的管理</span><br><span class="line"></span><br><span class="line">第17章　SQL中游标的使用</span><br><span class="line"></span><br><span class="line">17.1　SQL游标的基本概念</span><br><span class="line"></span><br><span class="line">17.1.1　游标的概念</span><br><span class="line"></span><br><span class="line">17.1.2　游标的作用及其应用</span><br><span class="line"></span><br><span class="line">17.2　SQL游标的使用</span><br><span class="line"></span><br><span class="line">17.2.1　使用DECLARE CURSOR语句创建游标</span><br><span class="line"></span><br><span class="line">17.2.2　使用OPEN&#x2F;CLOSE语句打开&#x2F;关闭游标</span><br><span class="line"></span><br><span class="line">17.2.3　使用FETCH语句检索数据</span><br><span class="line"></span><br><span class="line">17.2.4　基于游标的定位DELETE语句</span><br><span class="line"></span><br><span class="line">17.2.5　基于游标的定位UPDATE语句</span><br><span class="line"></span><br><span class="line">17.3　SQL Server中游标的扩展</span><br><span class="line"></span><br><span class="line">17.3.1　Transact_SQL扩展DECLARE CURSOR语法</span><br><span class="line"></span><br><span class="line">17.3.2　@@CURSOR_ROWS全局变量确定游标的行数</span><br><span class="line"></span><br><span class="line">17.3.3　@@FETCH_STATUS全局变量检测FETCH操作的状态</span><br><span class="line"></span><br><span class="line">17.3.4　游标的关闭与释放</span><br><span class="line"></span><br><span class="line">17.3.5　游标变量</span><br><span class="line"></span><br><span class="line">17.3.6　使用系统过程管理游标</span><br><span class="line"></span><br><span class="line">17.4　Oracle中游标的使用</span><br><span class="line"></span><br><span class="line">17.4.1　显式游标与隐式游标</span><br><span class="line"></span><br><span class="line">17.4.2　游标的属性</span><br><span class="line"></span><br><span class="line">17.4.3　%TYPE、%ROWTYPE定义记录变量</span><br><span class="line"></span><br><span class="line">17.4.4　参数化游标</span><br><span class="line"></span><br><span class="line">17.4.5　游标中的循环</span><br><span class="line"></span><br><span class="line">17.4.6　游标变量</span><br><span class="line"></span><br><span class="line">17.5　小结</span><br><span class="line"></span><br><span class="line">第18章　事务控制与并发处理</span><br><span class="line"></span><br><span class="line">18.1　SQL事务控制</span><br><span class="line"></span><br><span class="line">18.1.1　事务控制的引入</span><br><span class="line"></span><br><span class="line">18.1.2　事务的特性</span><br><span class="line"></span><br><span class="line">18.1.3　SQL中与事务有关的语句</span><br><span class="line"></span><br><span class="line">18.2　事务控制的具体实现</span><br><span class="line"></span><br><span class="line">18.2.1　开始事务</span><br><span class="line"></span><br><span class="line">18.2.2　SET CONSTRAINTS语句设置约束的延期执行</span><br><span class="line"></span><br><span class="line">18.2.3　终止事务</span><br><span class="line"></span><br><span class="line">18.3　并发控制</span><br><span class="line"></span><br><span class="line">18.3.1　并发操作的问题</span><br><span class="line"></span><br><span class="line">18.3.2　事务隔离级别</span><br><span class="line"></span><br><span class="line">18.3.3　SET TRANSACTION设置事务属性</span><br><span class="line"></span><br><span class="line">18.4　SQL Server中的并发事务控制</span><br><span class="line"></span><br><span class="line">18.4.1　锁的分类</span><br><span class="line"></span><br><span class="line">18.4.2　SQL Server中表级锁的使用</span><br><span class="line"></span><br><span class="line">18.4.3　设置隔离级别实现并发控制</span><br><span class="line"></span><br><span class="line">18.4.4　死锁及其预防</span><br><span class="line"></span><br><span class="line">18.5　Oracle中的并发事务控制</span><br><span class="line"></span><br><span class="line">18.5.1　通过加锁避免写数据丢失</span><br><span class="line"></span><br><span class="line">18.5.2　设置只读事务（READ ONLY）</span><br><span class="line"></span><br><span class="line">18.5.3　Oracle中的隔离级别</span><br><span class="line"></span><br><span class="line">第19章　嵌入式SQL</span><br><span class="line"></span><br><span class="line">19.1　SQL的调用</span><br><span class="line"></span><br><span class="line">19.1.1　直接调用SQL</span><br><span class="line"></span><br><span class="line">19.1.2　嵌入式SQL</span><br><span class="line"></span><br><span class="line">19.1.3　SQL调用层接口（CLI）</span><br><span class="line"></span><br><span class="line">19.2　嵌入式SQL的使用</span><br><span class="line"></span><br><span class="line">19.2.1　创建嵌入式SQL语句</span><br><span class="line"></span><br><span class="line">19.2.2　SQL通信区</span><br><span class="line"></span><br><span class="line">19.2.3　主变量</span><br><span class="line"></span><br><span class="line">19.2.4　嵌入式SQL中使用游标</span><br><span class="line"></span><br><span class="line">19.3　检索、操作SQL数据</span><br><span class="line"></span><br><span class="line">19.3.1　不需要游标的SQL DML操作</span><br><span class="line"></span><br><span class="line">19.3.2　使用游标的SQL DML操作</span><br><span class="line"></span><br><span class="line">19.3.3　动态SQL技术</span><br><span class="line"></span><br><span class="line">19.4　SQL Server中嵌入式SQL的编译运行</span><br><span class="line"></span><br><span class="line">19.4.1　嵌入式SQL代码</span><br><span class="line"></span><br><span class="line">19.4.2　预编译文件</span><br><span class="line"></span><br><span class="line">19.4.3　设置Visual C++ 6.0连接</span><br><span class="line"></span><br><span class="line">19.4.4　编译运行程序</span><br><span class="line"></span><br><span class="line">19.5　Oracle中嵌入式SQL的编译运行</span><br><span class="line"></span><br><span class="line">19.5.1　嵌入式SQL代码</span><br><span class="line"></span><br><span class="line">19.5.2　预编译文件</span><br><span class="line"></span><br><span class="line">19.5.3　设置Visual C++ 6.0编译环境</span><br><span class="line"></span><br><span class="line">19.5.4　编译运行程序</span><br><span class="line"></span><br><span class="line">附录A　SQL保留字</span><br><span class="line"></span><br><span class="line">附录B　常用的SQL命令</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<p>最后，这里为大家准备了几百本的互联网电子书，有需要的过来取吧。<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">点击获取</a></p>
+<p><em>本页书籍均来自网络，如有侵权，请联系我立即删除。我的邮箱：yaojianguolq@163.com</em></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Johngo 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Johngo 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+	<div>
+    		
+    		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:20px;">------ 全文结束------</div>
+    
+</div>
+
+    		
+	 </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Johngo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.keketec.club/posts/901a8eb6/" title="SQL查询的艺术 PDF">https://www.keketec.club/posts/901a8eb6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信公众号「更多前沿技术和互联网资讯」</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/e71dbe20/" rel="prev" title="SQLite权威指南 PDF">
+      <i class="fa fa-chevron-left"></i> SQLite权威指南 PDF
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/1e90591e/" rel="next" title="Spring 实战 中文版第4版 PDF">
+      Spring 实战 中文版第4版 PDF <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E3%80%8ASQL%E6%9F%A5%E8%AF%A2%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B"><span class="nav-number">1.</span> <span class="nav-text">《SQL查询的艺术》</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5-https-pan-baidu-com-s-12qSyjdsLNPB5nRkqg7kH2Q-%E6%8F%90%E5%8F%96%E7%A0%81-khvi"><span class="nav-number">1.0.1.</span> <span class="nav-text">链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;12qSyjdsLNPB5nRkqg7kH2Q 提取码: khvi</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Johngo"
+      src="/images/kekedetecclub_logo3.jpg">
+  <p class="site-author-name" itemprop="name">Johngo</p>
+  <div class="site-description" itemprop="description">大数据,数据工程,算法,资源分享</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yaojianguolq@163.com" title="E-Mail → mailto:yaojianguolq@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat_channel.jpg" title="WeiXin → &#x2F;images&#x2F;wechat_channel.jpg"><i class="adress-card fa-fw"></i>WeiXin</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="globe fa-fw"></i>
+      友情链接通道
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener" target="_blank">谷歌</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	<!--ip和地域统计信息-->
+	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=_fOQouwsuF2pOPwBQ9L8sojPMaqTH2v7cGFb8Wa5eQY&cl=ffffff&w=a"></script>
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Johngo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">702k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">10:38</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+<div class="BbeiAn-info">
+京ICP备 -
+<a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784"  rel="nofollow">2020035266</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->|
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020035266" style="color:#f0d784;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow">2020035266</a>          <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'sfTNgv3098BhVImK1DnzeN5m-9Nh9j0Va',
+      appKey     : 'DhfYdMnfvIT8T30ebayJty8M',
+      placeholder: "ヾﾉ≧∀≦)o来啊, 评论说说看...",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

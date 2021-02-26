@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+<meta name="360-site-verification" content="c18957643638bc25bd0a63c24cc00c32" />
+<meta name="sogou_site_verification" content="O32MpBFYmd"/>
+<meta name="bytedance-verification-code" content="HoDKSuHZKjSOgA/LtyDi" />
+<meta name="google-site-verification" content="DrH7ugrBSgIOHx1mYn_jgThI0EPHF7kB2pRxkfoTbec" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kekedetecclub_icon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kekedetecclub_icon.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.keketec.club","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+
+  <meta name="baidu-site-verification" content="code-l9uRmrXQRg" />
+
+
+
+
+
+
+
+
+
+  <meta name="description" content="利用Python实现自动化邮件发送">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己写代码实现邮件发送，再也不用可视化那么麻烦了！">
+<meta property="og:url" content="https://www.keketec.club/posts/a6c96c4e/index.html">
+<meta property="og:site_name" content="可可の技术俱乐部">
+<meta property="og:description" content="利用Python实现自动化邮件发送">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.keketec.club/images/c40bdbf83b4b177ba6c010e0aa84ba4b1.jpg">
+<meta property="og:image" content="https://www.keketec.club/images/c40bdbf83b4b177ba6c010e0aa84ba4b2.jpg">
+<meta property="og:image" content="https://www.keketec.club/images/c40bdbf83b4b177ba6c010e0aa84ba4b3.jpg">
+<meta property="og:image" content="https://www.keketec.club/images/c40bdbf83b4b177ba6c010e0aa84ba4b4.jpg">
+<meta property="article:published_time" content="2021-02-15T15:28:16.000Z">
+<meta property="article:modified_time" content="2021-02-15T15:32:16.862Z">
+<meta property="article:author" content="Johngo">
+<meta property="article:tag" content="技术分享,书籍分享,大数据,数据工程,算法工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.keketec.club/images/c40bdbf83b4b177ba6c010e0aa84ba4b1.jpg">
+
+<link rel="canonical" href="https://www.keketec.club/posts/a6c96c4e/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>自己写代码实现邮件发送，再也不用可视化那么麻烦了！ | 可可の技术俱乐部</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0c5a95f460eb137dd49e2e64ed9c0b49";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">可可の技术俱乐部</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.keketec.club/posts/a6c96c4e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kekedetecclub_logo3.jpg">
+      <meta itemprop="name" content="Johngo">
+      <meta itemprop="description" content="大数据,数据工程,算法,资源分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="可可の技术俱乐部">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自己写代码实现邮件发送，再也不用可视化那么麻烦了！
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-15 23:28:16 / 修改时间：23:32:16" itemprop="dateCreated datePublished" datetime="2021-02-15T23:28:16+08:00">2021-02-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%BD%A8%E8%BF%B9/" itemprop="url" rel="index"><span itemprop="name">编程轨迹</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/a6c96c4e/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/a6c96c4e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+            <div class="post-description">利用Python实现自动化邮件发送</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>学而知不足，长按关注，精彩不错过</p>
+</blockquote>
+<p>Python自动批量发送邮件是一种什么体验？</p>
+<p><img src="/images/c40bdbf83b4b177ba6c010e0aa84ba4b1.jpg" width="50%" height="50%"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很多时候，我们在发送一些邮件信息的时候，在可视化的界面巴拉巴拉操作一顿，其实就是一些很简单的信息，然后可能发送的收信者比较多，带来很多的麻烦，主要是浪费了我们的时间！</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>很重要重要重要的准备工作，带你进入代码发送邮件的氛围！</p>
+<blockquote>
+<p>看着前面小哥哥把每个订单号都粘贴到邮件里，然后再给一个收件人的联系邮箱，如此熟练的操作，整整做了一个上午，因为需要给每个收件人单独发送，我心里有种说不出来的感觉 …</p>
+<p>这就像刚刚工作那会儿看着旁边跟我一样的实习生在重复插入sql一样，他居然不知道列编辑，然而要一行一行一个字一个字的敲进去一样的感受。</p>
+<p><em>如果有不知道的同学也可以私信我，几分钟的事情可能对于不知道这个技巧的同学需要几个小时才能完成</em></p>
+</blockquote>
+<p><strong>进行正题！！！！！</strong></p>
+<p>自动化发邮件之前，首先需要用到的两个重要的 Python 模块：smtplib 和 email</p>
+<blockquote>
+<p>smtplib模块主要用来建立服务器链接、服务器断开的工作； </p>
+<p>email模块主要负责邮件的构建，比如收件人、邮件标题、邮件内容等</p>
+</blockquote>
+<p>我用的是python2.7版本，所以安装这两个库：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip2.7 install secure-smtplib</span><br><span class="line">pip2.7 install email</span><br></pre></td></tr></table></figure>
+<p>安装准备好需要的包，下面就开始发送邮件的操作，实例化操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例化SMTP</span></span><br><span class="line">smtp = smtplib.SMTP()</span><br><span class="line"><span class="comment"># 链接邮件服务器</span></span><br><span class="line">smtp.connect(smtp_addr)</span><br><span class="line"><span class="comment"># 配置发送邮箱的用户名和密码</span></span><br><span class="line">smtp.login(login_user, login_passwd)</span><br></pre></td></tr></table></figure>
+<p>MIMEText 类是 MIMENonMultipart 类的子类，一般用于用于封装文本类型的邮件</p>
+<p>实例化邮件服务器信息，可以进行相应的配置，邮件的标题、邮件的收发邮件信息、当然还可以进行抄送</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 邮件正文</span></span><br><span class="line">words = <span class="string">&quot;First Message&quot;</span></span><br><span class="line"><span class="comment"># 配置发送内容msg</span></span><br><span class="line">msg = MIMEText(words, <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 邮件标题</span></span><br><span class="line">msg[<span class="string">&#x27;Subject&#x27;</span>] = Header(<span class="string">&quot;MyTestTitle&quot;</span>,<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 发信人地址</span></span><br><span class="line">msg[<span class="string">&#x27;from&#x27;</span>] = sender</span><br><span class="line"><span class="comment"># 收信人地址（支持群发）</span></span><br><span class="line">msg[<span class="string">&#x27;to&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join([receiver])</span><br><span class="line"><span class="comment"># 抄送人地址（支持群发）</span></span><br><span class="line">msg[<span class="string">&#x27;Cc&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join([receiver])</span><br></pre></td></tr></table></figure>
+<p>在完成了以上的操作之后，然后配置自己的信息就可以进行操作发送了。</p>
+<p>当然在我给到的代码中，都是以变量给出的，首先咱们需要初始化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 发送者邮箱（改为自己的）</span></span><br><span class="line">sender = <span class="string">&quot;xxx@163.com&quot;</span></span><br><span class="line"><span class="comment"># 接受者邮箱（改为自己的）</span></span><br><span class="line">receiver = <span class="string">&quot;xxx@qq.com&quot;</span></span><br><span class="line"><span class="comment"># 服务器地址</span></span><br><span class="line">smtp_addr = <span class="string">&quot;smtp.163.com&quot;</span></span><br><span class="line"><span class="comment"># 邮件服务器账号和密码，自己的163邮箱的登录账号和密码</span></span><br><span class="line">login_user = <span class="string">&quot;xxx@163.com&quot;</span></span><br><span class="line">login_passwd = <span class="string">&quot;xxx&quot;</span></span><br></pre></td></tr></table></figure>
+<p>最后，关键一步，可以发送了，但是记得要关闭连接哦！</p>
+<p><strong>参数格式：</strong><code>sendmail(self, from_addr, to_addrs, msg, mail_options=[], rcpt_options=[])</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 发送邮件</span></span><br><span class="line">smtp.sendmail(sender, receiver, msg.as_string())</span><br><span class="line">smtp.quit()</span><br><span class="line">print(<span class="string">&quot;邮件发送成功 ^_^ &quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>哈哈，看看我的界面，已经收到了哈！</p>
+<p><img src="/images/c40bdbf83b4b177ba6c010e0aa84ba4b2.jpg" width="50%" height="50%"></p>
+<p>跟着试了的同学以及攻城狮们，成功了没有</p>
+<p>需要我发送代码的，给我留言哈，可以公号后台私信我吆！！</p>
+<p>也可以自取哈！地址: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1At5rsu59QZ0BLQ6ETpPEvw">https://pan.baidu.com/s/1At5rsu59QZ0BLQ6ETpPEvw</a>  密码: s8ew</p>
+<h2 id="发送其他格式的邮件"><a href="#发送其他格式的邮件" class="headerlink" title="发送其他格式的邮件"></a>发送其他格式的邮件</h2><p>上述展示了普通格式的邮件发送格式，下面咱们再看看想要发送一些HTML格式的，还有带附件的邮件形式。</p>
+<p>再然后就可以自行发挥发送任何格式和组合的邮件了！</p>
+<h3 id="1-发送-HTML-格式的邮件"><a href="#1-发送-HTML-格式的邮件" class="headerlink" title="1. 发送 HTML 格式的邮件"></a>1. 发送 HTML 格式的邮件</h3><p>在创建 MIMEText 时，将 _subtype 设置为 “html”，则可发送 html 格式的邮件</p>
+<p>其他步骤和发送纯文本邮件配置和代码格式都一致</p>
+<p>跟上面文本格式邮件对比下哈，会有很清晰的思路：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 普通文本格式</span></span><br><span class="line">msg = MIMEText(words, <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># html 格式</span></span><br><span class="line">msg = MIMEText(words, <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>贴出详细代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 邮件正文</span></span><br><span class="line">words = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;html&gt;</span></span><br><span class="line"><span class="string">    &lt;head&gt;</span></span><br><span class="line"><span class="string">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;/head&gt;</span></span><br><span class="line"><span class="string">    &lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;table border=&quot;1&quot;&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;th&gt;Python&lt;/th&gt;</span></span><br><span class="line"><span class="string">            &lt;th&gt;编程爱好者&lt;/th&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;需要代码的同学&lt;/td&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;加我微信&lt;/td&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;Johngo106X&lt;/td&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;双手奉上！&lt;/td&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">    &lt;/table&gt;</span></span><br><span class="line"><span class="string">    &lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 配置发送内容msg</span></span><br><span class="line">msg = MIMEText(words, <span class="string">&#x27;html&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 邮件标题</span></span><br><span class="line">msg[<span class="string">&#x27;Subject&#x27;</span>] = Header(<span class="string">&quot;测试发送HTML信息&quot;</span>,<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 发信人地址</span></span><br><span class="line">msg[<span class="string">&#x27;from&#x27;</span>] = sender</span><br><span class="line"><span class="comment"># 收信人地址（支持群发）</span></span><br><span class="line">msg[<span class="string">&#x27;to&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join([receiver])</span><br><span class="line"><span class="comment"># 抄送人地址（支持群发）</span></span><br><span class="line">msg[<span class="string">&#x27;Cc&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join([receiver])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化SMTP</span></span><br><span class="line">smtp = smtplib.SMTP()</span><br><span class="line"><span class="comment"># 链接邮件服务器</span></span><br><span class="line">smtp.connect(smtp_addr)</span><br><span class="line"><span class="comment"># 配置发送邮箱的用户名和密码</span></span><br><span class="line">smtp.login(login_user, login_passwd)</span><br><span class="line"><span class="comment"># 发送邮件</span></span><br><span class="line">smtp.sendmail(sender, receiver, msg.as_string())</span><br><span class="line">smtp.quit()</span><br><span class="line">print(<span class="string">&quot;邮件发送成功!&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>一些自定义的变量可以自己设置哈，全量代码可以在网盘中自取！！！</p>
+<p>哈， 再看看 Johngo 的结果：</p>
+<p><img src="/images/c40bdbf83b4b177ba6c010e0aa84ba4b3.jpg" width="50%" height="50%"></p>
+<p>下面再看看重要的附件，是怎么操作的</p>
+<h3 id="2-发送带有附件的邮件"><a href="#2-发送带有附件的邮件" class="headerlink" title="2. 发送带有附件的邮件"></a>2. 发送带有附件的邮件</h3><p>类似的操作方法，不同的操作是实例化发送信息的这块稍有区别</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置发送内容msg</span></span><br><span class="line">msg = MIMEMultipart()</span><br></pre></td></tr></table></figure>
+<p>同样的我先把代码附上，需要详细代码的请自取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 邮件正文</span></span><br><span class="line">words = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;html&gt;</span></span><br><span class="line"><span class="string">    &lt;head&gt;</span></span><br><span class="line"><span class="string">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;/head&gt;</span></span><br><span class="line"><span class="string">    &lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;table border=&quot;1&quot;&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;th&gt;Python&lt;/th&gt;</span></span><br><span class="line"><span class="string">            &lt;th&gt;编程爱好者&lt;/th&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;需要代码的同学&lt;/td&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;加我微信&lt;/td&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;Johngo106X&lt;/td&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;双手奉上！&lt;/td&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;原文链接&lt;/td&gt;</span></span><br><span class="line"><span class="string">            &lt;td&gt;xxx&lt;/td&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt;</span></span><br><span class="line"><span class="string">    &lt;/table&gt;</span></span><br><span class="line"><span class="string">    &lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 配置发送内容msg</span></span><br><span class="line">msg = MIMEMultipart()</span><br><span class="line"><span class="comment"># 邮件正文</span></span><br><span class="line">msg.attach(payload=MIMEText(words, _subtype=<span class="string">&quot;html&quot;</span>, _charset=<span class="string">&quot;utf-8&quot;</span>))</span><br><span class="line"><span class="comment"># 邮件标题</span></span><br><span class="line">msg[<span class="string">&#x27;Subject&#x27;</span>] = Header(<span class="string">&quot;附件邮件发送测试&quot;</span>,<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="comment"># 发信人地址</span></span><br><span class="line">msg[<span class="string">&#x27;from&#x27;</span>] = sender</span><br><span class="line"><span class="comment"># 收信人地址（支持群发）</span></span><br><span class="line">msg[<span class="string">&#x27;to&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join([receiver])</span><br><span class="line"><span class="comment"># 抄送人地址（支持群发）</span></span><br><span class="line">msg[<span class="string">&#x27;Cc&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join([receiver])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file_path <span class="keyword">in</span> &#123;<span class="string">&quot;test1.xlsx&quot;</span>, <span class="string">&quot;test2.xlsx&quot;</span>&#125;:</span><br><span class="line">    attachment = MIMEText(_text=<span class="built_in">open</span>(file_path, <span class="string">&quot;rb&quot;</span>).read(), _subtype=<span class="string">&quot;base64&quot;</span>, _charset=<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    attachment[<span class="string">&quot;Content-Type&quot;</span>] = <span class="string">&quot;application/octet-stream&quot;</span></span><br><span class="line">    attachment[<span class="string">&quot;Content-Disposition&quot;</span>] = <span class="string">&quot;attachment; filename=%s&quot;</span> % file_path</span><br><span class="line">    msg.attach(payload=attachment)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化SMTP</span></span><br><span class="line">smtp = smtplib.SMTP()</span><br><span class="line"><span class="comment"># 链接邮件服务器</span></span><br><span class="line">smtp.connect(smtp_addr)</span><br><span class="line"><span class="comment"># 配置发送邮箱的用户名和密码</span></span><br><span class="line">smtp.login(login_user, login_passwd)</span><br><span class="line"><span class="comment"># 发送邮件</span></span><br><span class="line">smtp.sendmail(sender, receiver, msg.as_string())</span><br><span class="line">smtp.quit()</span><br><span class="line">print(<span class="string">&quot;邮件发送成功!&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>同样的，咱们看看附件过来了没有</p>
+<p><img src="/images/c40bdbf83b4b177ba6c010e0aa84ba4b4.jpg" width="50%" height="50%"></p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>比较简单的几行代码，在某些时候就可以将事情事半功倍，适用于定时发邮件、快速自定义的发送相同文件内容的场景</p>
+<p>代码先放到网盘，就暂且不往github上传了，地址链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1At5rsu59QZ0BLQ6ETpPEvw">https://pan.baidu.com/s/1At5rsu59QZ0BLQ6ETpPEvw</a>  密码: s8ew，自取哈！！</p>
+<p>另外，我给到的是最基本的 Python 自定义发送邮件的操作，拿到手的同学和攻城狮们可以进行再次封装，更加好用一些。同时也可以分享出来</p>
+<p>好了，今天就是有关自定义发送邮件小工具的全部分享内容了，如果感觉对你有些许帮助，还请轻轻点击转发，让更多的人看到，对 Johngo 来说，有莫大的帮助！</p>
+<p>文中有任何错误的地方，烦请不吝赐教。非常感谢!</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Johngo 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Johngo 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+	<div>
+    		
+    		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:20px;">------ 全文结束------</div>
+    
+</div>
+
+    		
+	 </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Johngo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.keketec.club/posts/a6c96c4e/" title="自己写代码实现邮件发送，再也不用可视化那么麻烦了！">https://www.keketec.club/posts/a6c96c4e/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">微信公众号「更多前沿技术和互联网资讯」</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/f09e3832/" rel="prev" title="Pro Git中文版 PDF">
+      <i class="fa fa-chevron-left"></i> Pro Git中文版 PDF
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/411b6060/" rel="next" title="Pandas系列 | 1.基本数据结构">
+      Pandas系列 | 1.基本数据结构 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E9%80%81%E5%85%B6%E4%BB%96%E6%A0%BC%E5%BC%8F%E7%9A%84%E9%82%AE%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">发送其他格式的邮件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8F%91%E9%80%81-HTML-%E6%A0%BC%E5%BC%8F%E7%9A%84%E9%82%AE%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">1. 发送 HTML 格式的邮件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8F%91%E9%80%81%E5%B8%A6%E6%9C%89%E9%99%84%E4%BB%B6%E7%9A%84%E9%82%AE%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">2. 发送带有附件的邮件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Johngo"
+      src="/images/kekedetecclub_logo3.jpg">
+  <p class="site-author-name" itemprop="name">Johngo</p>
+  <div class="site-description" itemprop="description">大数据,数据工程,算法,资源分享</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">150</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yaojianguolq@163.com" title="E-Mail → mailto:yaojianguolq@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat_channel.jpg" title="WeiXin → &#x2F;images&#x2F;wechat_channel.jpg"><i class="adress-card fa-fw"></i>WeiXin</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="globe fa-fw"></i>
+      友情链接通道
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener" target="_blank">谷歌</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+	<!--ip和地域统计信息-->
+	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=_fOQouwsuF2pOPwBQ9L8sojPMaqTH2v7cGFb8Wa5eQY&cl=ffffff&w=a"></script>
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Johngo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">702k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">10:38</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+<div class="BbeiAn-info">
+京ICP备 -
+<a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784"  rel="nofollow">2020035266</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->|
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020035266" style="color:#f0d784;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow">2020035266</a>          <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'sfTNgv3098BhVImK1DnzeN5m-9Nh9j0Va',
+      appKey     : 'DhfYdMnfvIT8T30ebayJty8M',
+      placeholder: "ヾﾉ≧∀≦)o来啊, 评论说说看...",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
