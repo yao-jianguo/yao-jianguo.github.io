@@ -300,7 +300,7 @@
 
       
         <blockquote>
-<p>C经典88案例打包下载地址<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw">https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw</a><br>密码: uji4</p>
+<p>C经典88案例打包下载地址<br>链接: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw">https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw</a><br>密码: uji4</p>
 </blockquote>
 <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
 <p>函数：fun()</p>
@@ -316,7 +316,7 @@
 <h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3 代码"></a>3 代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 3 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 4 </span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">函数：fun()</span></span><br><span class="line"><span class="comment">功能：统计一行字符串单词的个数，作为函数值返回</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">一行字符串在主函数中输入，规定所有单词都是由小写字母组成，单词之间由若干空格隔开，一行的开始没有空格</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>; 	<span class="comment">// 单词个数</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(*(s+i)!=<span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (*(s+i) == <span class="string">&#x27; &#x27;</span> &amp;&amp; *(s+i<span class="number">-1</span>) != <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">			cnt += <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (*(s+i<span class="number">-1</span>) != <span class="string">&#x27; &#x27;</span>)&#123;	<span class="comment">// 如果单词结尾没有空格，则单词数需要空开数+1</span></span><br><span class="line">		<span class="keyword">return</span> cnt + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[] = <span class="string">&quot;hello world      i am c language&quot;</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;字符串内容：%s\n&quot;</span>, s);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;单词个数为：%d\n&quot;</span>, fun(s));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>示例结果：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gcc ex003.c -o demo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">字符串内容：hello world      i am c language</span><br><span class="line">单词个数为：6</span><br></pre></td></tr></table></figure>
-<h2 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h2><p>在这里给大家准备了几百本的互联网技术类书籍，需要的来下载吧！<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/KAYLiHFc5HTPiFD74JYeKQ">点击获取</a><br>有任何问题，欢迎随时交流!!!</p>
+<h2 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h2><p>在这里给大家准备了几百本的互联网技术类书籍，需要的来下载吧！<a target="_blank" rel="noopener external nofollow noreferrer" href="https://mp.weixin.qq.com/s/KAYLiHFc5HTPiFD74JYeKQ">点击获取</a><br>有任何问题，欢迎随时交流!!!</p>
 
     </div>
 
@@ -366,7 +366,7 @@
     <a href="https://www.keketec.club/posts/596c8a1b/" title="C经典88案例 | 统计一行字符串单词的个数，作为函数值返回">https://www.keketec.club/posts/596c8a1b/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -494,7 +494,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="mailto:yaojianguolq@163.com" title="E-Mail → mailto:yaojianguolq@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:yaojianguolq@163.com" title="E-Mail → mailto:yaojianguolq@163.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
         <a href="/images/wechat_channel.jpg" title="WeiXin → &#x2F;images&#x2F;wechat_channel.jpg"><i class="adress-card fa-fw"></i>WeiXin</a>
@@ -508,10 +508,10 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度</a>
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">百度</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener" target="_blank">谷歌</a>
+          <a href="http://www.google.com/" title="http:&#x2F;&#x2F;www.google.com&#x2F;" rel="noopener external nofollow noreferrer" target="_blank">谷歌</a>
         </li>
     </ul>
   </div>
@@ -558,14 +558,14 @@
     <span title="站点阅读时长">10:38</span>
 </div>
 <!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 -->
 
 <div class="BbeiAn-info">
 京ICP备 -
-<a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784"  rel="nofollow">2020035266</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->|
-<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020035266" style="color:#f0d784;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow">2020035266</a>          <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
+<a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="external nofollow">2020035266</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->|
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020035266" style="color:#f0d784;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="external nofollow">2020035266</a>          <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
 </div>
 
 
