@@ -609,6 +609,30 @@
       </categories>
   </entry>
   <entry>
+    <title>统计各个年龄阶段的人数</title>
+    <url>/posts/c7081fb8/</url>
+    <content><![CDATA[<blockquote>
+<p>C经典88案例打包下载地址<br>链接: <a href="https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw">https://pan.baidu.com/s/1niyqlgtX3AWWQ669aUHVNw</a><br>密码: uji4</p>
+</blockquote>
+<h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
+<p>函数：fun()</p>
+<p>功能：统计各个年龄阶段的人数</p>
+<p>描述：</p>
+<p>N个年龄通过调用随机函数获得，并存放在主函数的age中<br>要求函数把0-9岁年龄段的放在d[0]中，把10-19岁年龄段的放在d[1]中，依次类推。把100岁及以上的放在d[10]中</p>
+<p>结果在主函数中输出</p>
+</blockquote>
+<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2 思路"></a>2 思路</h2><p>随机使用 rand() 函数，头文件为#include <stdlib.h></stdlib.h></p>
+<p>rand()函数是按指定的顺序来产生整数，因此每次执行上面的语句都打印相同的两个值，所以说C语言的随机并不是真正意义上的随机，有时候也叫伪随机数，使用 rand() 生成随机数之前需要用随机发生器的初始化函数 srand(unsigned seed)（也位于 stdlib.h 中） 进行伪随机数序列初始化，seed 又叫随机种子，通俗讲就是，如果每次提供的 seed 是一样的话，最后每一轮生成的几个随机值也都是一样的，因此叫伪随机数，所以需要每次提供不同的 seed 达到完全的随机，我们通常用时间函数 time(NULL) 作为 seed ，因为时间值每秒都不同，但是在此题中使用不到time这个工具</p>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3 代码"></a>3 代码</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 11</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">函数：fun()</span></span><br><span class="line"><span class="comment">功能：统计各个年龄阶段的人数</span></span><br><span class="line"><span class="comment">描述：</span></span><br><span class="line"><span class="comment">N个年龄通过调用随机函数获得，并存放在主函数的age中</span></span><br><span class="line"><span class="comment">要求函数把0-9岁年龄段的放在d[0]中，把10-19岁年龄段的放在d[1]中，依次类推。把100岁及以上的放在d[10]中</span></span><br><span class="line"><span class="comment">结果在主函数中输出</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> *age, <span class="keyword">int</span> *d)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(age+i)&lt;<span class="number">100</span>) &#123;</span><br><span class="line">            d[(*(age+i))/<span class="number">10</span>] += <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            d[M<span class="number">-1</span>] += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> age[N];        <span class="comment">// 100个用户</span></span><br><span class="line">    <span class="keyword">int</span> d[M]=&#123;<span class="number">0</span>&#125;;         <span class="comment">// 11个年龄段</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        *(age+i) = rand()%<span class="number">121</span>;    <span class="comment">// 设定年龄的范围是0-120</span></span><br><span class="line">    &#125;</span><br><span class="line">    fun(age, d);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;各年龄阶段人数数量：\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, d[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gcc ex004.c -o demo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">各年龄阶段人数数量：</span><br><span class="line">10 9 8 4 10 8 7 7 6 11 20</span><br></pre></td></tr></table></figure>
+<h2 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h2><p>在这里给大家准备了几百本的互联网技术类书籍，需要的来下载吧！<a href="https://mp.weixin.qq.com/s/KAYLiHFc5HTPiFD74JYeKQ">点击获取</a><br>有任何问题，欢迎随时交流!!!</p>
+]]></content>
+      <categories>
+        <category>C经典88案例</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C经典88案例 | 统计一行字符串单词的个数，作为函数值返回</title>
     <url>/posts/596c8a1b/</url>
     <content><![CDATA[<blockquote>
