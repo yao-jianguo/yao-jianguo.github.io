@@ -609,6 +609,50 @@
       </categories>
   </entry>
   <entry>
+    <title>打印树的层号以及每层的结点信息</title>
+    <url>/posts/232fafd8/</url>
+    <content><![CDATA[<p>读前福利：几百本互联网技术书籍送给大家<a href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw</a></p>
+<p><img src="/images/10.jpg" width="100%" height="100%"></p>
+<p>【0】</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>这是今天我从同事跳槽到快手一面的一个题目，虽然不是太难，但是听说也是卡了好半天，抽空大家不妨也作为饭后甜点看看(^o^)/~</p>
+<p>个人感觉这属于那种见过就一定会的那种题目，如果没太接触过这种类似leetcode题目的话，还是得想一会儿的</p>
+<p>下面咱们来一起看看，从题目出发… </p>
+<p>【1】</p>
+<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>要求按照下面的格式将树信息打印出来，看着很是直观的打印结果</p>
+<p><img src="/images/5ed84cfdcc9877d9acef2a7550a0901a1.jpg" width="80%" height="80%"></p>
+<p><strong>要求输出格式</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A -&gt; 第一行</span><br><span class="line">B C -&gt; 第二行</span><br><span class="line">D E F -&gt; 第三行</span><br><span class="line">G H -&gt; 第四行</span><br></pre></td></tr></table></figure>
+<p>就是按照给定的格式进行结点的打印</p>
+<p>【3】</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>很明显的可以看到，在实现该结果的同时，大致解决思路一定是基于过去咱们看到过的层次遍历的方式</p>
+<p>在层次遍历的同时，记录每次换行操作时候的动作</p>
+<p>在这所有之前，咱们先给出来结点信息，以便后面清楚的对图中二叉树进行操作</p>
+<p>【利用Python看，简单又直观】</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value</span>):</span></span><br><span class="line">        self.val = value        <span class="comment"># 结点值</span></span><br><span class="line">        self.left = <span class="literal">None</span>        <span class="comment"># 指向做孩子</span></span><br><span class="line">        self.right = <span class="literal">None</span>        <span class="comment"># 指向右孩子</span></span><br></pre></td></tr></table></figure>
+<p>需要回顾层次遍历代码的可以翻到文末，进行了层次遍历的展现，这里有过去用<a href="https://mp.weixin.qq.com/s/-jadDaU_lGBXn5VIGHwJSQ">C语言实现</a>的代码</p>
+<p>由于题目中要求在打印结点信息的同时，要求给出结点所在行和列的信息</p>
+<p>利用层次遍历遍历的特点（<strong>重点！重点！重点！在当前层的所有结点元素入队之后，上一层最后一个结点元素才会弹出</strong>），初始化两个指针 last 和 cur</p>
+<ul>
+<li>last 指向上一层最右侧结点</li>
+<li>cur 是当前结点位置【往队列中输入的结点】</li>
+</ul>
+<p>只有当弹出的元素 与 last 指向的结点相同，说明 cur 也遍历到了当前层的最右面。此时，可以令 last = cur</p>
+<p>具体细节流程，看下面[长长长长长…]图</p>
+<p><img src="/images/5ed84cfdcc9877d9acef2a7550a0901a2.jpg" width="80%" height="80%"></p>
+<p>以上，基于给定的树状结构进行了细致的说明，供大家参考。另外个人不太喜欢动图，原因是想要看清楚每一步的时候，不容易控制</p>
+<p>对于队列的操作，利用 Python 的 list 数据结构实现的方式如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 入队</span></span><br><span class="line"><span class="built_in">list</span>.append(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出队</span></span><br><span class="line"><span class="built_in">list</span>.append(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>下面给出完整代码，并且给出构造树的代码已经层次遍历的代码</p>
+<p>可以直接贴到自己的环境中进行实现</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># !/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 树结点类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value</span>):</span></span><br><span class="line">        self.val = value</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">level_order_traverse</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">        <span class="comment"># 队列queue</span></span><br><span class="line">    queue = [root]</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(queue) &gt; <span class="number">0</span>:</span><br><span class="line">        node = queue.pop(<span class="number">0</span>)</span><br><span class="line">        print(node.val, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            queue.append(node.right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">level_order_traverse_datail</span>(<span class="params">root</span>):</span></span><br><span class="line">    last, n_last = root, root</span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="comment"># 队列queue</span></span><br><span class="line">    queue = [root]</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(queue) &gt; <span class="number">0</span>:</span><br><span class="line">        node = queue.pop(<span class="number">0</span>)</span><br><span class="line">        print(node.val, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            n_last = node.left</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            n_last = node.right</span><br><span class="line">            queue.append(node.right)</span><br><span class="line">        <span class="comment"># 当弹出的结点是last指向的结点时，令 last = n_last</span></span><br><span class="line">        <span class="keyword">if</span> last <span class="keyword">is</span> node:</span><br><span class="line">            last = n_last</span><br><span class="line">            print(<span class="string">&quot; -&gt; 第 %d 行&quot;</span> % i)</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 新建节点</span></span><br><span class="line">    node_A = TreeNode(<span class="string">&quot;A&quot;</span>)</span><br><span class="line">    node_B = TreeNode(<span class="string">&quot;B&quot;</span>)</span><br><span class="line">    node_C = TreeNode(<span class="string">&quot;C&quot;</span>)</span><br><span class="line">    node_D = TreeNode(<span class="string">&quot;D&quot;</span>)</span><br><span class="line">    node_E = TreeNode(<span class="string">&quot;E&quot;</span>)</span><br><span class="line">    node_F = TreeNode(<span class="string">&quot;F&quot;</span>)</span><br><span class="line">    node_G = TreeNode(<span class="string">&quot;G&quot;</span>)</span><br><span class="line">    node_H = TreeNode(<span class="string">&quot;H&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 构建二叉树</span></span><br><span class="line">    <span class="comment">#      A</span></span><br><span class="line">    <span class="comment">#    /   \</span></span><br><span class="line">    <span class="comment">#   B     C</span></span><br><span class="line">    <span class="comment">#  /     / \</span></span><br><span class="line">    <span class="comment"># D     E   F</span></span><br><span class="line">    <span class="comment">#      / \</span></span><br><span class="line">    <span class="comment">#     G   H</span></span><br><span class="line"></span><br><span class="line">    node_A.left, node_A.right = node_B, node_C</span><br><span class="line">    node_B.left = node_D</span><br><span class="line">    node_C.left, node_C.right = node_E, node_F</span><br><span class="line">    node_E.left, node_E.right = node_G, node_H</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印结点元素</span></span><br><span class="line">    print(<span class="string">&quot;层次遍历结果：&quot;</span>)</span><br><span class="line">    level_order_traverse(node_A)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">&quot;\n层次遍历结果(打印行号)：&quot;</span>)</span><br><span class="line">    level_order_traverse_datail(node_A)</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="最后福利"><a href="#最后福利" class="headerlink" title="最后福利"></a>最后福利</h4><p>这里为大家准备了几百本的互联网电子书，有需要的过来取吧。<a href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">点击获取</a></p>
+]]></content>
+      <categories>
+        <category>数据结构和算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C经典88案例 | 统计各个年龄阶段的人数</title>
     <url>/posts/c7081fb8/</url>
     <content><![CDATA[<blockquote>
