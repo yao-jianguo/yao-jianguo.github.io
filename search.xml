@@ -609,17 +609,17 @@
       </categories>
   </entry>
   <entry>
-    <title>打印树的层号以及每层的结点信息</title>
+    <title>【百度一面】怒喷面试官！不就是树遍历时增加一个行号？</title>
     <url>/posts/232fafd8/</url>
     <content><![CDATA[<p>读前福利：几百本互联网技术书籍送给大家<a href="https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw">https://mp.weixin.qq.com/s/dFqVQ2qJxvQ0YrIlPISJuw</a></p>
-<p><img src="/images/2186f8ac6fddd8d768ccb900aaa447551.jpg" width="80%" height="80%"></p>
+<p><img src="/images/2186f8ac6fddd8d768ccb900aaa447551.jpg" width="98%" height="98%"></p>
 <p>【0】</p>
 <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>这是今天我从同事跳槽到快手一面的一个题目，虽然不是太难，但是听说也是卡了好半天，抽空大家不妨也作为饭后甜点看看(^o^)/~</p>
 <p>个人感觉这属于那种见过就一定会的那种题目，如果没太接触过这种类似leetcode题目的话，还是得想一会儿的</p>
 <p>下面咱们来一起看看，从题目出发… </p>
 <p>【1】</p>
 <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>要求按照下面的格式将树信息打印出来，看着很是直观的打印结果</p>
-<p><img src="/images/5ed84cfdcc9877d9acef2a7550a0901a1.jpg" width="80%" height="80%"></p>
+<p><img src="/images/5ed84cfdcc9877d9acef2a7550a0901a1.jpg" width="98%" height="98%"></p>
 <p><strong>要求输出格式</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A -&gt; 第一行</span><br><span class="line">B C -&gt; 第二行</span><br><span class="line">D E F -&gt; 第三行</span><br><span class="line">G H -&gt; 第四行</span><br></pre></td></tr></table></figure>
 <p>就是按照给定的格式进行结点的打印</p>
@@ -638,7 +638,7 @@
 </ul>
 <p>只有当弹出的元素 与 last 指向的结点相同，说明 cur 也遍历到了当前层的最右面。此时，可以令 last = cur</p>
 <p>具体细节流程，看下面[长长长长长…]图</p>
-<p><img src="/images/5ed84cfdcc9877d9acef2a7550a0901a2.jpg" width="80%" height="80%"></p>
+<p><img src="/images/5ed84cfdcc9877d9acef2a7550a0901a2.jpg" width="98%" height="98%"></p>
 <p>以上，基于给定的树状结构进行了细致的说明，供大家参考。另外个人不太喜欢动图，原因是想要看清楚每一步的时候，不容易控制</p>
 <p>对于队列的操作，利用 Python 的 list 数据结构实现的方式如下</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 入队</span></span><br><span class="line"><span class="built_in">list</span>.append(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出队</span></span><br><span class="line"><span class="built_in">list</span>.append(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
